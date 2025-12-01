@@ -1,0 +1,1 @@
+export const TabsInjectionKey = Symbol('tabs-context')
