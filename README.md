@@ -1,4 +1,4 @@
-# TMS
+# Design System Web
 
 ## Nuxt Minimal Starter
 
