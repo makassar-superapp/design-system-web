@@ -1,4 +1,5 @@
-# DESIGN SYSTEM WEB
+# TMS
+
 ## Nuxt Minimal Starter
 
 Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
@@ -74,4 +75,39 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## Storybook
+
+Run Storybook for component development and documentation on `http://localhost:6006`:
+
+```bash
+# npm
+npm run storybook
+
+# pnpm
+pnpm storybook
+
+# yarn
+yarn storybook
+
+# bun
+bun run storybook
+```
+
+Build Storybook for production:
+
+```bash
+# npm
+npm run build-storybook
+
+# pnpm
+pnpm build-storybook
+
+# yarn
+yarn build-storybook
+
+# bun
+bun run build-storybook
+```
+
 # design-system-web
