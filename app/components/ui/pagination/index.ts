@@ -1,0 +1,5 @@
+export { default as Pagination } from './Pagination.vue'
+export { default as PaginationTotalItem } from './PaginationTotalItem.vue'
+export { default as PaginationItemPerPage } from './PaginationItemPerPage.vue'
+export { default as PaginationPageController } from './PaginationPageController.vue'
+export { default as PaginationPageItem } from './PaginationPageItem.vue'

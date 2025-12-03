@@ -189,6 +189,28 @@
   --shadow-xl: 0 20px 25px -5px rgba(10, 13, 18, 0.06),
     0 8px 10px -6px rgba(10, 13, 18, 0.06);
   --shadow-2xl: 0 25px 50px -12px rgba(10, 13, 18, 0.2);
+
+  --color-text-brand: var(--Brands-Primary);
+  --color-text-white: var(--Text-White);
+  --color-text-high: var(--Text-High);
+  --color-text-medium: var(--Text-Medium);
+  --color-text-low: var(--Text-Low);
+  --color-text-very-low: var(--Text-Very-Low);
+
+  --color-container-white: var(--Container-Background-White);
+  --color-container-black: var(--Container-Background-Black);
+  --color-container-high: var(--Container-Background-High);
+  --color-container-medium: var(--Container-Background-Medium);
+  --color-container-low: var(--Container-Background-Low);
+
+  --color-border-idle: var(--General-Border-Idle);
+  --color-border-hover: var(--General-Border-Hover);
+
+  --color-info: var(--Brands-General-Info);
+  --color-processing: var(--Brands-General-Processing);
+  --color-success: var(--tdm-green-600);
+  --color-warning: var(--tdm-orange-500);
+  --color-link: var(--tdm-primary);
 }
 
 :root {
@@ -353,6 +375,25 @@
   --tdm-orange-70: rgba(232, 135, 0, 0.7);
   --tdm-orange-80: rgba(232, 135, 0, 0.8);
   --tdm-orange-90: rgba(232, 135, 0, 0.9);
+
+  --Brands-Primary: var(--tdm-primary);
+  --Text-High: var(--tdm-gray-900);
+  --Text-Medium: var(--tdm-gray-400);
+  --Text-Low: var(--tdm-gray-300);
+  --Text-Very-Low: var(--tdm-gray-200);
+  --Text-White: var(--tdm-white);
+
+  --Container-Background-White: var(--tdm-white);
+  --Container-Background-Black: var(--tdm-gray-900);
+  --Container-Background-High: var(--tdm-gray-base-0);
+  --Container-Background-Medium: var(--tdm-gray-100);
+  --Container-Background-Low: var(--tdm-gray-200);
+
+  --General-Border-Idle: var(--tdm-gray-200);
+  --General-Border-Hover: var(--tdm-gray-300);
+
+  --Brands-General-Info: #4485f5;
+  --Brands-General-Processing: var(--tdm-blue-500);
 }
 
 .dark {
@@ -388,6 +429,20 @@
   --sidebar-accent-foreground: oklch(0.985 0 0);
   --sidebar-border: oklch(0.269 0 0);
   --sidebar-ring: oklch(0.439 0 0);
+
+  --Text-High: var(--tdm-gray-base-0);
+  --Text-Medium: var(--tdm-gray-300);
+  --Text-Low: var(--tdm-gray-400);
+  --Text-Very-Low: var(--tdm-gray-500);
+
+  --Container-Background-White: var(--tdm-white);
+  --Container-Background-Black: var(--tdm-gray-900);
+  --Container-Background-High: var(--tdm-gray-700);
+  --Container-Background-Medium: var(--tdm-gray-800);
+  --Container-Background-Low: var(--tdm-gray-900);
+
+  --General-Border-Idle: var(--tdm-gray-500);
+  --General-Border-Hover: var(--tdm-gray-400);
 }
 
 @layer base {
