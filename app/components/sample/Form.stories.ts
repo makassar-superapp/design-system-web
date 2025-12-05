@@ -1,4 +1,14 @@
-<script setup lang="ts">
+import type { Meta, StoryObj } from "@storybook/vue3";
+import Form from "./Form.vue";
+
+const meta: Meta<typeof Form> = {
+  title: "UI/Sample Form",
+  component: Form,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      source: {
+        code: `<script setup lang="ts">
 import { ref, computed } from "vue";
 import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/yup";
@@ -303,7 +313,7 @@ const showPassword = ref(false);
                   <SelectItem
                     v-for="i in 4"
                     :key="i"
-                    :value="`placeholder${i}`"
+                    :value="\`placeholder\${i}\`"
                   >
                     Placeholder {{ i }}
                   </SelectItem>
@@ -353,7 +363,7 @@ const showPassword = ref(false);
                         @click.stop="
                           form.setFieldValue(
                             'multiselect',
-                            (value || []).filter((v: string) => v !== item)
+                            (value || []).filter((v) => v !== item)
                           )
                         "
                       >
@@ -380,7 +390,7 @@ const showPassword = ref(false);
                   <SelectItem
                     v-for="i in 4"
                     :key="i"
-                    :value="`placeholder${i}`"
+                    :value="\`placeholder\${i}\`"
                   >
                     Placeholder {{ i }}
                   </SelectItem>
@@ -411,31 +421,31 @@ const showPassword = ref(false);
           <div class="space-y-3 mt-2">
             <div v-for="i in 4" :key="i" class="flex items-center space-x-2">
               <Checkbox
-                :id="`checkbox-${i}`"
-                :checked="value?.includes(`placeholder${i}`)"
+                :id="\`checkbox-\${i}\`"
+                :checked="value?.includes(\`placeholder\${i}\`)"
                 :class="
                   errorMessage &&
                   'border-red-500 data-[state=checked]:border-red-500'
                 "
                 @update:checked="
-                  (checked: boolean) => {
+                  (checked) => {
                     const currentValue = value || [];
                     if (checked) {
                       form.setFieldValue('checkbox', [
                         ...currentValue,
-                        `placeholder${i}`,
+                        \`placeholder\${i}\`,
                       ]);
                     } else {
                       form.setFieldValue(
                         'checkbox',
-                        currentValue.filter((v: string) => v !== `placeholder${i}`)
+                        currentValue.filter((v) => v !== \`placeholder\${i}\`)
                       );
                     }
                   }
                 "
               />
               <Label
-                :for="`checkbox-${i}`"
+                :for="\`checkbox-\${i}\`"
                 :class="[
                   'text-sm font-normal cursor-pointer',
                   errorMessage && 'text-red-500',
@@ -457,15 +467,15 @@ const showPassword = ref(false);
             <RadioGroup v-bind="componentField">
               <div v-for="i in 4" :key="i" class="flex items-center space-x-2">
                 <RadioGroupItem
-                  :id="`radio-${i}`"
-                  :value="`placeholder${i}`"
+                  :id="\`radio-\${i}\`"
+                  :value="\`placeholder\${i}\`"
                   :aria-invalid="!!errorMessage"
                   :class="
                     errorMessage && 'border-red-500 aria-checked:border-red-500'
                   "
                 />
                 <Label
-                  :for="`radio-${i}`"
+                  :for="\`radio-\${i}\`"
                   :class="[
                     'text-sm font-normal cursor-pointer',
                     errorMessage && 'text-red-500',
@@ -536,4 +546,18 @@ const showPassword = ref(false);
       </div>
     </form>
   </div>
-</template>
+</template>`,
+      },
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof Form>;
+
+export const Default: Story = {
+  render: () => ({
+    components: { Form },
+    template: `<Form />`,
+  }),
+};

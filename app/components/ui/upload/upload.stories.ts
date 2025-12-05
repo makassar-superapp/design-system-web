@@ -1,4 +1,16 @@
-<script setup lang="ts">
+import type { Meta, StoryObj } from "@storybook/vue3";
+import { ref } from "vue";
+import Upload from "./upload.vue";
+import type { UploadFile } from "./upload.vue";
+
+const meta: Meta<typeof Upload> = {
+  title: "UI/Upload",
+  component: Upload,
+  tags: ["autodocs"],
+  parameters: {
+    docs: {
+      source: {
+        code: `<script setup lang="ts">
 import { ref, computed } from "vue";
 import { Upload, X, Eye, CheckCircle2, XCircle } from "lucide-vue-next";
 import { Button } from "@/components/ui/button";
@@ -76,7 +88,6 @@ const processFiles = (newFiles: File[]) => {
     file,
   }));
 
-  // Get current files from modelValue prop
   const currentFiles = props.modelValue || [];
 
   if (props.multiple) {
@@ -85,7 +96,6 @@ const processFiles = (newFiles: File[]) => {
     emit("update:modelValue", uploadFiles);
   }
 
-  // Simulate upload for each file with a small delay to ensure emit completes
   setTimeout(() => {
     uploadFiles.forEach((uploadFile) => {
       simulateUpload(uploadFile);
@@ -113,7 +123,6 @@ const simulateUpload = (uploadFile: UploadFile) => {
 
     if (newProgress >= 100) {
       clearInterval(interval);
-      // Randomly succeed or fail for demo purposes
       const success = Math.random() > 0.3;
 
       const updatedFiles = [...currentFiles];
@@ -168,7 +177,6 @@ const retryUpload = (fileId: string) => {
   };
   emit("update:modelValue", updatedFiles);
 
-  // Simulate upload with a small delay to ensure emit completes
   setTimeout(() => {
     const retryFile = updatedFiles[fileIndex];
     if (retryFile) {
@@ -215,7 +223,6 @@ const openFileDialog = () => {
         @change="handleFileSelect"
       />
 
-      <!-- Upload Icon -->
       <div
         :class="[
           'mb-3',
@@ -228,7 +235,6 @@ const openFileDialog = () => {
         <Upload :class="['size-6']" />
       </div>
 
-      <!-- Button Text -->
       <div
         :class="[
           'text-sm font-medium mb-2',
@@ -242,7 +248,6 @@ const openFileDialog = () => {
         Button
       </div>
 
-      <!-- File Info -->
       <div
         :class="[
           'text-xs mb-1',
@@ -268,7 +273,6 @@ const openFileDialog = () => {
         <span class="font-medium">{{ maxSizeLabel }}</span>
       </div>
 
-      <!-- Divider -->
       <div class="flex items-center w-full max-w-xs mb-4">
         <div class="flex-1 border-t border-gray-200"></div>
         <span
@@ -284,7 +288,6 @@ const openFileDialog = () => {
         <div class="flex-1 border-t border-gray-200"></div>
       </div>
 
-      <!-- Browse Button -->
       <Button
         type="button"
         variant="secondary"
@@ -295,7 +298,6 @@ const openFileDialog = () => {
         Button
       </Button>
 
-      <!-- Lock Icon for Disabled State -->
       <div v-if="disabled" class="absolute top-3 right-3 text-gray-400">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -327,10 +329,9 @@ const openFileDialog = () => {
           },
         ]"
       >
-        <!-- File Icon -->
         <div
           :class="[
-            'flex-shrink-0 w-10 h-10 rounded-lg flex items-center justify-center',
+            'shrink-0 w-10 h-10 rounded-lg flex items-center justify-center',
             {
               'bg-gray-100': file.status !== 'failed',
               'bg-red-100': file.status === 'failed',
@@ -360,7 +361,6 @@ const openFileDialog = () => {
           </svg>
         </div>
 
-        <!-- File Info -->
         <div class="flex-1 min-w-0">
           <div class="flex items-center gap-2">
             <p class="text-sm font-medium text-gray-900 truncate">
@@ -370,7 +370,6 @@ const openFileDialog = () => {
           <div class="flex items-center gap-2 mt-0.5">
             <p class="text-xs text-gray-500">{{ formatFileSize(file.size) }}</p>
 
-            <!-- Upload Progress -->
             <template v-if="file.status === 'uploading'">
               <div
                 class="w-8 h-8 rounded-full border-2 border-red-500 border-t-transparent animate-spin"
@@ -378,13 +377,11 @@ const openFileDialog = () => {
               <span class="text-xs text-gray-900">{{ file.progress }}%</span>
             </template>
 
-            <!-- Success Status -->
             <template v-else-if="file.status === 'success'">
               <CheckCircle2 class="size-4 text-green-600" />
               <span class="text-xs text-green-600 font-medium">Selesai</span>
             </template>
 
-            <!-- Failed Status -->
             <template v-else-if="file.status === 'failed'">
               <XCircle class="size-4 text-red-600" />
               <span class="text-xs text-red-600 font-medium">Gagal</span>
@@ -392,9 +389,7 @@ const openFileDialog = () => {
           </div>
         </div>
 
-        <!-- Actions -->
         <div class="flex items-center gap-2">
-          <!-- Preview Button (for success) -->
           <button
             v-if="file.status === 'success'"
             type="button"
@@ -404,7 +399,6 @@ const openFileDialog = () => {
             <Eye class="size-4" />
           </button>
 
-          <!-- Retry Button (for failed) -->
           <button
             v-if="file.status === 'failed'"
             type="button"
@@ -414,13 +408,11 @@ const openFileDialog = () => {
             Coba lagi
           </button>
 
-          <!-- Divider (for failed with retry) -->
           <div
             v-if="file.status === 'failed'"
             class="w-px h-4 bg-gray-300"
           ></div>
 
-          <!-- Remove Button -->
           <button
             type="button"
             :class="[
@@ -438,4 +430,161 @@ const openFileDialog = () => {
       </div>
     </div>
   </div>
-</template>
+</template>`,
+      },
+    },
+  },
+  argTypes: {
+    modelValue: {
+      control: false,
+      description: "Array of uploaded files",
+    },
+    accept: {
+      control: "text",
+      description: "Accepted file types",
+    },
+    maxSize: {
+      control: "number",
+      description: "Maximum file size in bytes",
+    },
+    multiple: {
+      control: "boolean",
+      description: "Allow multiple file upload",
+    },
+    disabled: {
+      control: "boolean",
+      description: "Disable upload",
+    },
+    hasError: {
+      control: "boolean",
+      description: "Show error state",
+    },
+    supportedFormats: {
+      control: "text",
+      description: "Supported formats label",
+    },
+    maxSizeLabel: {
+      control: "text",
+      description: "Max size label",
+    },
+  },
+};
+
+export default meta;
+type Story = StoryObj<typeof Upload>;
+
+export const Default: Story = {
+  render: (args) => ({
+    components: { Upload },
+    setup() {
+      const files = ref<UploadFile[]>([]);
+      return { files, args };
+    },
+    template: `
+      <div class="max-w-md">
+        <Upload 
+          v-model="files"
+          v-bind="args"
+        />
+      </div>
+    `,
+  }),
+};
+
+export const Multiple: Story = {
+  render: (args) => ({
+    components: { Upload },
+    setup() {
+      const files = ref<UploadFile[]>([]);
+      return { files, args };
+    },
+    template: `
+      <div class="max-w-md">
+        <Upload 
+          v-model="files"
+          :multiple="true"
+          v-bind="args"
+        />
+      </div>
+    `,
+  }),
+};
+
+export const Disabled: Story = {
+  render: (args) => ({
+    components: { Upload },
+    setup() {
+      const files = ref<UploadFile[]>([]);
+      return { files, args };
+    },
+    template: `
+      <div class="max-w-md">
+        <Upload 
+          v-model="files"
+          :disabled="true"
+          v-bind="args"
+        />
+      </div>
+    `,
+  }),
+};
+
+export const WithError: Story = {
+  render: (args) => ({
+    components: { Upload },
+    setup() {
+      const files = ref<UploadFile[]>([]);
+      return { files, args };
+    },
+    template: `
+      <div class="max-w-md">
+        <Upload 
+          v-model="files"
+          :has-error="true"
+          v-bind="args"
+        />
+      </div>
+    `,
+  }),
+};
+
+export const WithUploadedFiles: Story = {
+  render: (args) => ({
+    components: { Upload },
+    setup() {
+      const files = ref<UploadFile[]>([
+        {
+          id: "1",
+          name: "document.pdf",
+          size: 1024000,
+          status: "success",
+          progress: 100,
+        },
+        {
+          id: "2",
+          name: "image.jpg",
+          size: 2048000,
+          status: "uploading",
+          progress: 45,
+        },
+        {
+          id: "3",
+          name: "failed-upload.png",
+          size: 512000,
+          status: "failed",
+          progress: 100,
+        },
+      ]);
+      return { files, args };
+    },
+    template: `
+      <div class="max-w-md">
+        <Upload 
+          v-model="files"
+          :multiple="true"
+          v-bind="args"
+        />
+      </div>
+    `,
+  }),
+};
