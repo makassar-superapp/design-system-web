@@ -16,7 +16,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/rayfajars/testing-nuxt-layers.git"
+    "url": "https://github.com/makassar-superapp/design-system-web.git"
   },
   "exports": {
     ".": {

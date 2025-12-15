@@ -23,13 +23,13 @@ yarn add @tdm/design-system-web
 
 ```bash
 # npm
-npm install github:rayfajars/testing-nuxt-layers#main
+npm install github:makassar-superapp/design-system-web#main
 
 # pnpm
-pnpm add github:rayfajars/testing-nuxt-layers#main
+pnpm add github:makassar-superapp/design-system-web#main
 
 # yarn
-yarn add github:rayfajars/testing-nuxt-layers#main
+yarn add github:makassar-superapp/design-system-web#main
 ```
 
 ### Via Local Path
@@ -49,6 +49,8 @@ pnpm add -D typescript
 # Lucide Vue Next untuk icons (required)
 pnpm add lucide-vue-next
 ```
+
+> **Note**: `lucide-vue-next` wajib diinstall untuk menghindari error "module not found" dan duplicate dependencies.
 
 ## Quick Start
 
@@ -159,26 +161,6 @@ Wrap dengan `<ClientOnly>`:
 </ClientOnly>
 ```
 
-## Development
-
-```bash
-# Install dependencies
-pnpm install
-
-# Development mode
-pnpm dev
-
-# Playground (testing layer)
-pnpm run dev:playground
-
-# Storybook
-pnpm storybook
-```
-
 ## Links
 
 - 📚 [Dokumentasi & Storybook](https://design-system.digitalteam.id/)
-
-## License
-
-MIT
