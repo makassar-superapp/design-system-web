@@ -1,15 +1,50 @@
 {
-  "name": "tms",
+  "name": "@tdm/design-system-web",
+  "version": "0.1.0",
+  "description": "TDM Design System - Nuxt Layer containing reusable UI components, utilities, and design tokens",
   "type": "module",
-  "private": true,
+  "private": false,
+  "author": "TDM Team",
+  "license": "MIT",
+  "keywords": [
+    "nuxt",
+    "nuxt-layer",
+    "design-system",
+    "ui-components",
+    "vue3",
+    "tailwindcss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/rayfajars/testing-nuxt-layers.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./nuxt.config.ts",
+      "import": "./nuxt.config.ts"
+    },
+    "./components/*": "./app/components/*",
+    "./utils/*": "./app/utils/*",
+    "./lib/*": "./app/lib/*",
+    "./assets/*": "./app/assets/*"
+  },
+  "main": "./nuxt.config.ts",
+  "types": "./nuxt.config.ts",
   "scripts": {
+    "dev": "nuxi dev",
+    "dev:playground": "nuxi dev .playground",
+    "dev:prepare": "nuxt prepare",
     "build": "nuxt build",
-    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "nuxt": "^4.0.0",
+    "vue": "^3.5.0",
+    "typescript": "^5.0.0"
   },
   "dependencies": {
     "@date-fns/tz": "^1.4.1",

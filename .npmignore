@@ -1,0 +1,64 @@
+# Development files
+.nuxt
+.output
+.vscode
+.storybook
+storybook-static
+node_modules
+.playground
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build artifacts
+dist
+build
+
+# Testing
+coverage
+*.log
+*.test.ts
+*.test.js
+*.spec.ts
+*.spec.js
+
+# IDE
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Storybook - IMPORTANT: Exclude all .stories.* files
+**/*.stories.ts
+**/*.stories.js
+**/*.stories.vue
+**/*.stories.tsx
+**/*.stories.jsx
+
+# Example and docs (documentation only, not needed in package)
+example/
+docs/
+LAYER_SETUP_GUIDE.md
+PUBLISHING.md
+
+# Git & Config
+.git
+.gitignore
+.eslintrc*
+eslint.config.*
+.prettierrc*
+prettier.config.*
+
+# Lock files (consumer should use their own)
+pnpm-lock.yaml
+package-lock.json
+yarn.lock
+bun.lockb
+
+# TypeScript build
+*.tsbuildinfo
