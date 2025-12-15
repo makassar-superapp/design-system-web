@@ -23,13 +23,13 @@ yarn add @tdm/design-system-web
 
 ```bash
 # npm
-npm install github:rayfajars/testing-nuxt-layers#main
+npm install github:makassar-superapp/design-system-web#main
 
 # pnpm
-pnpm add github:rayfajars/testing-nuxt-layers#main
+pnpm add github:makassar-superapp/design-system-web#main
 
 # yarn
-yarn add github:rayfajars/testing-nuxt-layers#main
+yarn add github:makassar-superapp/design-system-web#main
 ```
 
 ### Via Local Path
@@ -162,9 +162,12 @@ pnpm run dev:playground
 pnpm storybook
 ```
 
-## Links
+## Documentation
 
-- 📚 [Dokumentasi & Storybook](https://design-system.digitalteam.id/)
+- 📚 [Component Documentation & Storybook](https://design-system.digitalteam.id/)
+- 📘 [**Setup via GitHub** - Installation Guide](./GITHUB_SETUP.md)
+- 📙 [Nuxt Layer Setup Guide](./LAYER_SETUP_GUIDE.md)
+- 📗 [Package Publishing Guide](./PUBLISHING.md)
 
 ## License
 
