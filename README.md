@@ -23,13 +23,13 @@ yarn add @tdm/design-system-web
 
 ```bash
 # npm
-npm install github:makassar-superapp/design-system-web#main
+npm install github:rayfajars/testing-nuxt-layers#main
 
 # pnpm
-pnpm add github:makassar-superapp/design-system-web#main
+pnpm add github:rayfajars/testing-nuxt-layers#main
 
 # yarn
-yarn add github:makassar-superapp/design-system-web#main
+yarn add github:rayfajars/testing-nuxt-layers#main
 ```
 
 ### Via Local Path
@@ -38,12 +38,16 @@ yarn add github:makassar-superapp/design-system-web#main
 pnpm add file:../design-system-web
 ```
 
-## ⚠️ Important: TypeScript Requirement
+## ⚠️ Important: Required Peer Dependencies
 
-**TypeScript wajib diinstall** di consumer project Anda:
+**Pastikan dependencies berikut terinstal** di consumer project Anda:
 
 ```bash
+# TypeScript (required)
 pnpm add -D typescript
+
+# Lucide Vue Next untuk icons (required)
+pnpm add lucide-vue-next
 ```
 
 ## Quick Start
@@ -123,6 +127,15 @@ pnpm add -D typescript
 pnpm run dev
 ```
 
+### ❌ "Cannot find module 'lucide-vue-next'"
+
+Install lucide-vue-next di **consumer app**:
+
+```bash
+pnpm add lucide-vue-next
+pnpm run dev
+```
+
 ### 🔧 Components Tidak Auto-Import
 
 1. Pastikan layer di-extend di `nuxt.config.ts`
@@ -162,12 +175,9 @@ pnpm run dev:playground
 pnpm storybook
 ```
 
-## Documentation
+## Links
 
-- 📚 [Component Documentation & Storybook](https://design-system.digitalteam.id/)
-- 📘 [**Setup via GitHub** - Installation Guide](./GITHUB_SETUP.md)
-- 📙 [Nuxt Layer Setup Guide](./LAYER_SETUP_GUIDE.md)
-- 📗 [Package Publishing Guide](./PUBLISHING.md)
+- 📚 [Dokumentasi & Storybook](https://design-system.digitalteam.id/)
 
 ## License
 

@@ -69,7 +69,7 @@ pnpm add ../design-system-web/tdm-design-system-web-0.1.0.tgz
 ### Option 3: Via GitHub
 
 ```bash
-pnpm add github:makassar-superapp/design-system-web#main
+pnpm add github:rayfajars/testing-nuxt-layers#main
 ```
 
 ## Verifikasi

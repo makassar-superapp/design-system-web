@@ -76,7 +76,16 @@ pnpm create nuxt my-app
 cd my-app
 ```
 
-2. **Extend your app** to use the TDM Design System layer by modifying `nuxt.config.ts`:
+2. **Install required peer dependencies**:
+
+```bash
+pnpm add -D typescript
+pnpm add lucide-vue-next
+```
+
+> **Note**: `lucide-vue-next` is required for icons used in UI components. `typescript` is required for type resolution.
+
+3. **Extend your app** to use the TDM Design System layer by modifying `nuxt.config.ts`:
 
 ```typescript
 // nuxt.config.ts
@@ -87,7 +96,7 @@ export default defineNuxtConfig({
 });
 ```
 
-3. **Use the components** in your app:
+4. **Use the components** in your app:
 
 ```vue
 <!-- app.vue -->
@@ -116,6 +125,8 @@ Once published to npm, you can install it:
 
 ```bash
 pnpm add @tdm/design-system-web
+pnpm add -D typescript
+pnpm add lucide-vue-next
 ```
 
 And extend in `nuxt.config.ts`:
@@ -130,9 +141,17 @@ export default defineNuxtConfig({
 
 You can also use it directly from GitHub:
 
+```bash
+# Install peer dependencies first
+pnpm add -D typescript
+pnpm add lucide-vue-next
+```
+
+Then extend in `nuxt.config.ts`:
+
 ```typescript
 export default defineNuxtConfig({
-  extends: ["github:makassar-superapp/design-system-web"],
+  extends: ["github:rayfajars/testing-nuxt-layers"],
 });
 ```
 
