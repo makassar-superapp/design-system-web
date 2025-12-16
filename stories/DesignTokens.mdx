@@ -1,0 +1,204 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Documentation/Design Tokens" />
+
+# Design Tokens
+
+Design tokens otomatis tersedia di consumer project Anda setelah extend layer. Tidak perlu konfigurasi tambahan!
+
+## Colors
+
+### Primary Colors
+
+Colors untuk main branding dan primary actions:
+
+- `primary` - Main brand color
+- `primary-foreground` - Text color untuk primary background
+
+### Semantic Colors
+
+Colors untuk semantic meanings:
+
+- `success` - Success states (hijau)
+- `warning` - Warning states (kuning/orange)
+- `info` - Informational states (biru)
+- `destructive` - Error/destructive actions (merah)
+
+### Gray Scale
+
+Neutral colors dengan 9 levels:
+
+- `gray-100` - Lightest gray
+- `gray-200`
+- `gray-300`
+- `gray-400`
+- `gray-500`
+- `gray-600`
+- `gray-700`
+- `gray-800`
+- `gray-900` - Darkest gray
+
+### Text Colors
+
+Text colors dengan emphasis levels:
+
+- `text-high` - High emphasis text (primary content)
+- `text-medium` - Medium emphasis text (secondary content)
+- `text-low` - Low emphasis text (disabled/hints)
+
+### Additional Colors
+
+- `background` - Page background color
+- `foreground` - Primary text color
+- `card` - Card background
+- `card-foreground` - Card text
+- `popover` - Popover background
+- `popover-foreground` - Popover text
+- `muted` - Muted background
+- `muted-foreground` - Muted text
+- `accent` - Accent background
+- `accent-foreground` - Accent text
+- `border` - Border colors
+- `input` - Input border
+- `ring` - Focus ring
+
+## Contoh Penggunaan Colors
+
+```vue
+<template>
+  <div class="space-y-4">
+    <!-- Primary -->
+    <div class="bg-primary text-primary-foreground p-4 rounded-lg">
+      Primary Background
+    </div>
+
+    <!-- Semantic Colors -->
+    <div class="bg-success text-white p-4 rounded-lg">Success State</div>
+
+    <div class="bg-warning text-white p-4 rounded-lg">Warning State</div>
+
+    <div class="bg-destructive text-white p-4 rounded-lg">Error State</div>
+
+    <!-- Text Emphasis -->
+    <div class="bg-white p-4 rounded-lg space-y-2">
+      <p class="text-text-high">High emphasis text</p>
+      <p class="text-text-medium">Medium emphasis text</p>
+      <p class="text-text-low">Low emphasis text</p>
+    </div>
+
+    <!-- Gray Scale -->
+    <div class="bg-gray-100 p-4 rounded-lg">Light gray background</div>
+
+    <div class="bg-gray-800 text-white p-4 rounded-lg">
+      Dark gray background
+    </div>
+  </div>
+</template>
+```
+
+## Typography
+
+Font families yang tersedia:
+
+### Font Montserrat
+
+```vue
+<p class="font-montserrat">This text uses Montserrat</p>
+```
+
+### Font Open Sans
+
+```vue
+<p class="font-opensans">This text uses Open Sans</p>
+```
+
+## Shadows
+
+Shadow utilities dengan berbagai levels:
+
+- `shadow-sm` - Small shadow
+- `shadow` - Default shadow
+- `shadow-md` - Medium shadow
+- `shadow-lg` - Large shadow
+- `shadow-xl` - Extra large shadow
+- `shadow-2xl` - 2XL shadow
+
+### Contoh Penggunaan Shadows
+
+```vue
+<template>
+  <div class="space-y-4">
+    <div class="bg-white p-4 rounded-lg shadow-sm">Small shadow</div>
+
+    <div class="bg-white p-4 rounded-lg shadow-md">Medium shadow</div>
+
+    <div class="bg-white p-4 rounded-lg shadow-lg">Large shadow</div>
+
+    <div class="bg-white p-4 rounded-lg shadow-2xl">2XL shadow</div>
+  </div>
+</template>
+```
+
+## Spacing
+
+Tailwind CSS spacing scale tersedia (0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96):
+
+```vue
+<!-- Padding -->
+<div class="p-4">Padding 1rem</div>
+<div class="px-6 py-4">Padding X: 1.5rem, Y: 1rem</div>
+
+<!-- Margin -->
+<div class="m-4">Margin 1rem</div>
+<div class="mt-8 mb-4">Margin Top: 2rem, Bottom: 1rem</div>
+
+<!-- Gap (for flex/grid) -->
+<div class="flex gap-4">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+```
+
+## Border Radius
+
+Border radius utilities:
+
+- `rounded-none` - No rounding
+- `rounded-sm` - Small rounding (0.125rem)
+- `rounded` - Default rounding (0.25rem)
+- `rounded-md` - Medium rounding (0.375rem)
+- `rounded-lg` - Large rounding (0.5rem)
+- `rounded-xl` - XL rounding (0.75rem)
+- `rounded-2xl` - 2XL rounding (1rem)
+- `rounded-3xl` - 3XL rounding (1.5rem)
+- `rounded-full` - Fully rounded (9999px)
+
+```vue
+<div class="rounded-lg p-4">Rounded large</div>
+<button class="rounded-full px-6 py-2">Pill button</button>
+```
+
+## Customization
+
+Untuk customize design tokens, override di `tailwind.config.js` atau `app.config.ts` di consumer project Anda:
+
+```javascript
+// tailwind.config.js
+export default {
+  theme: {
+    extend: {
+      colors: {
+        primary: "your-custom-color",
+        // override other tokens
+      },
+    },
+  },
+};
+```
+
+## Best Practices
+
+1. **Gunakan semantic colors** - Gunakan `success`, `warning`, `destructive` daripada hardcode warna
+2. **Konsisten dengan spacing scale** - Gunakan spacing utilities daripada arbitrary values
+3. **Text emphasis** - Gunakan `text-high`, `text-medium`, `text-low` untuk hierarchy
+4. **Shadows untuk depth** - Gunakan shadows untuk memberikan visual depth

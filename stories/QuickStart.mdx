@@ -1,0 +1,170 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Documentation/Quick Start" />
+
+# Quick Start
+
+Panduan cepat untuk mulai menggunakan TDM Design System Web di project Nuxt Anda.
+
+## 1. Extend Layer di Nuxt Config
+
+Setelah instalasi, tambahkan design system sebagai layer di `nuxt.config.ts`:
+
+```typescript
+export default defineNuxtConfig({
+  extends: ["@tdm/design-system-web"],
+});
+```
+
+### Jika Install dari GitHub atau Local Path
+
+Gunakan path yang sesuai:
+
+```typescript
+// Via GitHub
+export default defineNuxtConfig({
+  extends: ["github:makassar-superapp/design-system-web#main"],
+});
+
+// Via Local Path
+export default defineNuxtConfig({
+  extends: ["../design-system-web"],
+});
+```
+
+## 2. Gunakan Components (Auto-imported)
+
+Semua components dari design system **otomatis ter-import**. Tidak perlu import manual!
+
+```vue
+<template>
+  <div>
+    <Button variant="default" @click="handleClick">Click me</Button>
+    <Input v-model="name" placeholder="Enter name" />
+  </div>
+</template>
+
+<script setup lang="ts">
+const name = ref("");
+const handleClick = () => console.log("Clicked!");
+</script>
+```
+
+### Contoh dengan Form Components
+
+```vue
+<template>
+  <div class="space-y-4">
+    <div>
+      <Label for="email">Email</Label>
+      <Input
+        id="email"
+        v-model="email"
+        type="email"
+        placeholder="you@example.com"
+      />
+    </div>
+
+    <div>
+      <Label for="message">Message</Label>
+      <Textarea
+        id="message"
+        v-model="message"
+        placeholder="Type your message..."
+      />
+    </div>
+
+    <Button @click="submitForm">Submit</Button>
+  </div>
+</template>
+
+<script setup lang="ts">
+const email = ref("");
+const message = ref("");
+
+const submitForm = () => {
+  console.log({ email: email.value, message: message.value });
+};
+</script>
+```
+
+## 3. Gunakan Utilities
+
+Design system menyediakan utility functions yang berguna:
+
+### cn() - Classname Merger
+
+Utility `cn()` untuk merge classnames dengan conditional logic:
+
+```vue
+<script setup lang="ts">
+import { cn } from "@tdm/design-system-web/lib/utils";
+
+const isActive = ref(true);
+const classes = cn(
+  "base-class",
+  isActive.value && "active-class",
+  "another-class"
+);
+</script>
+```
+
+### Contoh Penggunaan di Component
+
+```vue
+<template>
+  <div :class="containerClasses">
+    <Button :class="buttonClasses" @click="toggle"> Toggle </Button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { cn } from "@tdm/design-system-web/lib/utils";
+
+const isExpanded = ref(false);
+
+const containerClasses = computed(() =>
+  cn(
+    "p-4 rounded-lg transition-all",
+    isExpanded.value ? "bg-primary text-white" : "bg-gray-100"
+  )
+);
+
+const buttonClasses = computed(() =>
+  cn("w-full", isExpanded.value && "bg-white text-primary")
+);
+
+const toggle = () => {
+  isExpanded.value = !isExpanded.value;
+};
+</script>
+```
+
+## Tips Development
+
+### 1. Restart Dev Server Setelah Setup
+
+Setelah menambahkan layer ke `nuxt.config.ts`, restart dev server:
+
+```bash
+# Kill dan restart
+pnpm run dev
+```
+
+### 2. Restart IDE untuk IntelliSense
+
+Untuk mendapatkan autocomplete dan type hints, restart IDE Anda setelah setup awal.
+
+### 3. Check Component Auto-import
+
+Jika component tidak ter-import otomatis:
+
+1. Pastikan layer di-extend dengan benar di `nuxt.config.ts`
+2. Clear cache: `rm -rf .nuxt node_modules/.cache`
+3. Restart dev server
+
+## Langkah Selanjutnya
+
+- Lihat [Components](?path=/docs/documentation-components--docs) untuk daftar lengkap komponen
+- Explore [Design Tokens](?path=/docs/documentation-design-tokens--docs) untuk styling
+- Check [Troubleshooting](?path=/docs/documentation-troubleshooting--docs) jika ada masalah
