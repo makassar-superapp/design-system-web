@@ -4,119 +4,201 @@ import { defineComponent } from "vue";
 const Typography = defineComponent({
   name: "Typography",
   template: `
-    <div class="p-8 space-y-12 max-w-7xl mx-auto">
+    <div class="max-w-7xl mx-auto p-8 space-y-16">
       <!-- Font Families -->
-      <div>
-        <h2 class="text-3xl font-bold mb-6">Font Families</h2>
+      <section>
+        <h2 class="text-3xl font-bold mb-2">Font Families</h2>
+        <p class="text-text-medium mb-6">Typography scale using Montserrat and Open Sans.</p>
         
-        <div class="space-y-6">
-          <div class="bg-white p-6 rounded-lg border">
-            <h3 class="text-lg font-bold mb-4">Montserrat</h3>
-             <code class="text-xs bg-gray-100 px-2 py-1 rounded mb-4 inline-block">font-montserrat</code>
-            <div class="space-y-3">
-              <p class="font-montserrat text-3xl font-bold">Bold: The quick brown fox</p>
-              <p class="font-montserrat text-2xl font-semibold">Semibold: The quick brown fox</p>
-              <p class="font-montserrat text-xl font-medium">Medium: The quick brown fox jumps</p>
-              <p class="font-montserrat text-lg">Regular: The quick brown fox jumps over</p>
-             <p class="font-montserrat text-base">Body: The quick brown fox jumps over the lazy dog. 0123456789</p>
-            </div>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg border">
-            <h3 class="text-lg font-bold mb-4">Open Sans</h3>
-            <code class="text-xs bg-gray-100 px-2 py-1 rounded mb-4 inline-block">font-opensans</code>
-            <div class="space-y-3">
-              <p class="font-opensans text-3xl font-bold">Bold: The quick brown fox</p>
-              <p class="font-opensans text-2xl font-semibold">Semibold: The quick brown fox</p>
-              <p class="font-opensans text-xl font-medium">Medium: The quick brown fox jumps</p>
-              <p class="font-opensans text-lg">Regular: The quick brown fox jumps over</p>
-              <p class="font-opensans text-base">Body: The quick brown fox jumps over the lazy dog. 0123456789</p>
-            </div>
-          </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-border">
+            <thead>
+              <tr class="border-b border-border">
+                <th class="text-left py-3 px-4 text-sm font-semibold">Class</th>
+                <th class="text-left py-3 px-4 text-sm font-semibold">Preview</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+              <tr>
+                <td class="py-3 px-4">
+                  <code class="text-sm font-mono text-blue-600">font-montserrat</code>
+                </td>
+                <td class="py-3 px-4">
+                  <p class="font-montserrat text-lg">The quick brown fox jumps over the lazy dog</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">
+                  <code class="text-sm font-mono text-blue-600">font-opensans</code>
+                </td>
+                <td class="py-3 px-4">
+                  <p class="font-opensans text-lg">The quick brown fox jumps over the lazy dog</p>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
-
-      <!-- Text Emphasis -->
-      <div>
-        <h2 class="text-3xl font-bold mb-6">Text Emphasis Levels</h2>
-        
-        <div class="bg-white p-6 rounded-lg border space-y-3">
-          <div class="flex items-center justify-between py-3 border-b">
-            <p class="text-text-brand text-xl">text-brand - Brand color</p>
-            <code class="text-xs bg-gray-100 px-2 py-1 rounded">text-text-brand</code>
-          </div>
-
-          <div class="flex items-center justify-between py-3 border-b">
-            <p class="text-text-high text-xl">text-high - Primary content</p>
-            <code class="text-xs bg-gray-100 px-2 py-1 rounded">text-text-high</code>
-          </div>
-
-          <div class="flex items-center justify-between py-3 border-b">
-            <p class="text-text-medium text-xl">text-medium - Secondary content</p>
-            <code class="text-xs bg-gray-100 px-2 py-1 rounded">text-text-medium</code>
-          </div>
-
-          <div class="flex items-center justify-between py-3 border-b">
-            <p class="text-text-low text-xl">text-low - Helper text</p>
-            <code class="text-xs bg-gray-100 px-2 py-1 rounded">text-text-low</code>
-          </div>
-
-          <div class="flex items-center justify-between py-3">
-            <p class="text-text-very-low text-xl">text-very-low - Disabled</p>
-            <code class="text-xs bg-gray-100 px-2 py-1 rounded">text-text-very-low</code>
-          </div>
-        </div>
-
-        <div class="bg-gray-900 p-6 rounded-lg mt-4">
-          <div class="flex items-center justify-between">
-            <p class="text-text-white text-xl">text-white - For dark backgrounds</p>
-            <code class="text-xs bg-gray-700 px-2 py-1 rounded text-white">text-text-white</code>
-          </div>
-        </div>
-      </div>
-
-      <!-- Usage Example -->
-      <div>
-        <h2 class="text-3xl font-bold mb-6">Usage Example</h2>
-        
-        <div class="bg-white p-6 rounded-lg border">
-          <h3 class="font-montserrat text-text-high text-2xl font-bold mb-3">Card Title (Montserrat Bold)</h3>
-          <p class="font-opensans text-text-medium text-base mb-2">Body text using Open Sans with medium emphasis for readable content.</p>
-          <p class="font-opensans text-text-low text-sm">Supporting text with low emphasis for additional context or metadata.</p>
-        </div>
-      </div>
+      </section>
 
       <!-- Font Weights -->
-      <div>
-        <h2 class="text-3xl font-bold mb-6">Available Font Weights</h2>
+      <section>
+        <h2 class="text-3xl font-bold mb-2">Font Weights</h2>
+        <p class="text-text-medium mb-6">Available font weight utilities.</p>
         
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div class="bg-white p-6 rounded-lg border">
-            <h3 class="text-base font-bold mb-4">Montserrat</h3>
-            <div class="space-y-2 text-sm">
-              <div class="font-montserrat font-light">Light (300) - <code class="bg-gray-100 px-1">font-light</code></div>
-              <div class="font-montserrat font-normal">Regular (400) - <code class="bg-gray-100 px-1">font-normal</code></div>
-              <div class="font-montserrat font-medium">Medium (500) - <code class="bg-gray-100 px-1">font-medium</code></div>
-              <div class="font-montserrat font-semibold">Semibold (600) - <code class="bg-gray-100 px-1">font-semibold</code></div>
-              <div class="font-montserrat font-bold">Bold (700) - <code class="bg-gray-100 px-1">font-bold</code></div>
-              <div class="font-montserrat font-extrabold">Extrabold (800) - <code class="bg-gray-100 px-1">font-extrabold</code></div>
-              <div class="font-montserrat font-black">Black (900) - <code class="bg-gray-100 px-1">font-black</code></div>
-            </div>
-          </div>
-
-          <div class="bg-white p-6 rounded-lg border">
-            <h3 class="text-base font-bold mb-4">Open Sans</h3>
-            <div class="space-y-2 text-sm">
-              <div class="font-opensans font-light">Light (300) - <code class="bg-gray-100 px-1">font-light</code></div>
-              <div class="font-opensans font-normal">Regular (400) - <code class="bg-gray-100 px-1">font-normal</code></div>
-              <div class="font-opensans font-medium">Medium (500) - <code class="bg-gray-100 px-1">font-medium</code></div>
-              <div class="font-opensans font-semibold">Semibold (600) - <code class="bg-gray-100 px-1">font-semibold</code></div>
-              <div class="font-opensans font-bold">Bold (700) - <code class="bg-gray-100 px-1">font-bold</code></div>
-              <div class="font-opensans font-extrabold">Extrabold (800) - <code class="bg-gray-100 px-1">font-extrabold</code></div>
-            </div>
-          </div>
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-border">
+            <thead>
+              <tr class="border-b border-border">
+                <th class="text-left py-3 px-4 text-sm font-semibold">Class</th>
+                <th class="text-left py-3 px-4 text-sm font-semibold">Weight</th>
+                <th class="text-left py-3 px-4 text-sm font-semibold">Preview</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">font-light</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">300</td>
+                <td class="py-3 px-4"><span class="font-light">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">font-normal</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">400</td>
+                <td class="py-3 px-4"><span class="font-normal">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">font-medium</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">500</td>
+                <td class="py-3 px-4"><span class="font-medium">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">font-semibold</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">600</td>
+                <td class="py-3 px-4"><span class="font-semibold">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">font-bold</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">700</td>
+                <td class="py-3 px-4"><span class="font-bold">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">font-extrabold</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">800</td>
+                <td class="py-3 px-4"><span class="font-extrabold">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">font-black</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">900</td>
+                <td class="py-3 px-4"><span class="font-black">The quick brown fox</span></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-      </div>
+      </section>
+
+      <!-- Text Sizes -->
+      <section>
+        <h2 class="text-3xl font-bold mb-2">Text Sizes</h2>
+        <p class="text-text-medium mb-6">Font size scale for text hierarchy.</p>
+        
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-border">
+            <thead>
+              <tr class="border-b border-border">
+                <th class="text-left py-3 px-4 text-sm font-semibold">Class</th>
+                <th class="text-left py-3 px-4 text-sm font-semibold">Size</th>
+                <th class="text-left py-3 px-4 text-sm font-semibold">Preview</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-xs</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">0.75rem / 12px</td>
+                <td class="py-3 px-4"><span class="text-xs">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-sm</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">0.875rem / 14px</td>
+                <td class="py-3 px-4"><span class="text-sm">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-base</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">1rem / 16px</td>
+                <td class="py-3 px-4"><span class="text-base">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-lg</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">1.125rem / 18px</td>
+                <td class="py-3 px-4"><span class="text-lg">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-xl</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">1.25rem / 20px</td>
+                <td class="py-3 px-4"><span class="text-xl">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-2xl</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">1.5rem / 24px</td>
+                <td class="py-3 px-4"><span class="text-2xl">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-3xl</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">1.875rem / 30px</td>
+                <td class="py-3 px-4"><span class="text-3xl">The quick brown fox</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-4xl</code></td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">2.25rem / 36px</td>
+                <td class="py-3 px-4"><span class="text-4xl">The quick brown fox</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- Text Emphasis -->
+      <section>
+        <h2 class="text-3xl font-bold mb-2">Text Emphasis</h2>
+        <p class="text-text-medium mb-6">Semantic text colors for content hierarchy.</p>
+        
+        <div class="overflow-x-auto">
+          <table class="min-w-full divide-y divide-border">
+            <thead>
+              <tr class="border-b border-border">
+                <th class="text-left py-3 px-4 text-sm font-semibold">Class</th>
+                <th class="text-left py-3 px-4 text-sm font-semibold">Usage</th>
+                <th class="text-left py-3 px-4 text-sm font-semibold">Preview</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-border">
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-text-brand</code></td>
+                <td class="py-3 px-4 text-sm text-text-medium">Brand color</td>
+                <td class="py-3 px-4"><span class="text-text-brand">Sample text</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-text-high</code></td>
+                <td class="py-3 px-4 text-sm text-text-medium">Primary content</td>
+                <td class="py-3 px-4"><span class="text-text-high">Sample text</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-text-medium</code></td>
+                <td class="py-3 px-4 text-sm text-text-medium">Secondary content</td>
+                <td class="py-3 px-4"><span class="text-text-medium">Sample text</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-text-low</code></td>
+                <td class="py-3 px-4 text-sm text-text-medium">Helper text</td>
+                <td class="py-3 px-4"><span class="text-text-low">Sample text</span></td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4"><code class="text-sm font-mono text-blue-600">text-text-very-low</code></td>
+                <td class="py-3 px-4 text-sm text-text-medium">Disabled state</td>
+                <td class="py-3 px-4"><span class="text-text-very-low">Sample text</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
     </div>
   `,
 });
