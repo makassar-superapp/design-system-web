@@ -126,18 +126,86 @@ const ColorPalette = defineComponent({
                 </td>
                 <td class="py-3 px-4 font-mono text-sm text-text-medium">#FAFAFA</td>
               </tr>
-              <tr v-for="shade in [100, 200, 300, 400, 500, 600, 700, 800, 900]" :key="shade">
+              <tr>
                 <td class="py-3 px-4">
                   <div class="flex items-center gap-3">
-                    <div :class="'w-10 h-10 rounded bg-gray-' + shade + ' ring-1 ring-black/5'"></div>
-                    <code class="text-sm font-mono text-blue-600">bg-gray-{{ shade }}</code>
+                    <div class="w-10 h-10 rounded bg-gray-100 ring-1 ring-black/5"></div>
+                    <code class="text-sm font-mono text-blue-600">bg-gray-100</code>
                   </div>
                 </td>
-                <td class="py-3 px-4 font-mono text-sm text-text-medium">
-                  {{ shade === 100 ? '#F5F5F5' : shade === 200 ? '#C9C9C9' : shade === 300 ? '#9B9B9B' : 
-                     shade === 400 ? '#737373' : shade === 500 ? '#525252' : shade === 600 ? '#404040' :
-                     shade === 700 ? '#212121' : shade === 800 ? '#171717' : '#0A0A0A' }}
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">#F5F5F5</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded bg-gray-200 ring-1 ring-black/5"></div>
+                    <code class="text-sm font-mono text-blue-600">bg-gray-200</code>
+                  </div>
                 </td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">#C9C9C9</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded bg-gray-300 ring-1 ring-black/5"></div>
+                    <code class="text-sm font-mono text-blue-600">bg-gray-300</code>
+                  </div>
+                </td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">#9B9B9B</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded bg-gray-400 ring-1 ring-black/5"></div>
+                    <code class="text-sm font-mono text-blue-600">bg-gray-400</code>
+                  </div>
+                </td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">#737373</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded bg-gray-500 ring-1 ring-black/5"></div>
+                    <code class="text-sm font-mono text-blue-600">bg-gray-500</code>
+                  </div>
+                </td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">#525252</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded bg-gray-600 ring-1 ring-black/5"></div>
+                    <code class="text-sm font-mono text-blue-600">bg-gray-600</code>
+                  </div>
+                </td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">#404040</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded bg-gray-700 ring-1 ring-black/5"></div>
+                    <code class="text-sm font-mono text-blue-600">bg-gray-700</code>
+                  </div>
+                </td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">#212121</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded bg-gray-800 ring-1 ring-black/5"></div>
+                    <code class="text-sm font-mono text-blue-600">bg-gray-800</code>
+                  </div>
+                </td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">#171717</td>
+              </tr>
+              <tr>
+                <td class="py-3 px-4">
+                  <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded bg-gray-900 ring-1 ring-black/5"></div>
+                    <code class="text-sm font-mono text-blue-600">bg-gray-900</code>
+                  </div>
+                </td>
+                <td class="py-3 px-4 font-mono text-sm text-text-medium">#0A0A0A</td>
               </tr>
             </tbody>
           </table>
@@ -228,17 +296,59 @@ const ColorPalette = defineComponent({
                 </tr>
               </thead>
               <tbody class="divide-y divide-border">
-                <tr v-for="shade in [200, 500, 600, 700, 800, 900]" :key="'red-' + shade">
+                <tr>
                   <td class="py-3 px-4">
                     <div class="flex items-center gap-3">
-                      <div :class="'w-10 h-10 rounded bg-red-' + shade + ' ring-1 ring-black/5'"></div>
-                      <code class="text-sm font-mono text-blue-600">bg-red-{{ shade }}</code>
+                      <div class="w-10 h-10 rounded bg-red-200 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-red-200</code>
                     </div>
                   </td>
-                  <td class="py-3 px-4 font-mono text-sm text-text-medium">
-                    {{ shade === 200 ? '#F8C59D' : shade === 500 ? '#C1360F' : shade === 600 ? '#A5210A' :
-                       shade === 700 ? '#8A1107' : shade === 800 ? '#6F0404' : '#5C0209' }}
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#F8C59D</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-red-500 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-red-500</code>
+                    </div>
                   </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#C1360F</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-red-600 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-red-600</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#A5210A</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-red-700 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-red-700</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#8A1107</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-red-800 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-red-800</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#6F0404</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-red-900 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-red-900</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#5C0209</td>
                 </tr>
               </tbody>
             </table>
@@ -257,17 +367,50 @@ const ColorPalette = defineComponent({
                 </tr>
               </thead>
               <tbody class="divide-y divide-border">
-                <tr v-for="shade in [500, 600, 700, 800, 900]" :key="'green-' + shade">
+                <tr>
                   <td class="py-3 px-4">
                     <div class="flex items-center gap-3">
-                      <div :class="'w-10 h-10 rounded bg-green-' + shade + ' ring-1 ring-black/5'"></div>
-                      <code class="text-sm font-mono text-blue-600">bg-green-{{ shade }}</code>
+                      <div class="w-10 h-10 rounded bg-green-500 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-green-500</code>
                     </div>
                   </td>
-                  <td class="py-3 px-4 font-mono text-sm text-text-medium">
-                    {{ shade === 500 ? '#3CB231' : shade === 600 ? '#249923' : shade === 700 ? '#188020' :
-                       shade === 800 ? '#0F671D' : '#09551B' }}
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#3CB231</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-green-600 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-green-600</code>
+                    </div>
                   </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#249923</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-green-700 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-green-700</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#188020</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-green-800 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-green-800</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#0F671D</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-green-900 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-green-900</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#09551B</td>
                 </tr>
               </tbody>
             </table>
@@ -286,17 +429,50 @@ const ColorPalette = defineComponent({
                 </tr>
               </thead>
               <tbody class="divide-y divide-border">
-                <tr v-for="shade in [500, 600, 700, 800, 900]" :key="'blue-' + shade">
+                <tr>
                   <td class="py-3 px-4">
                     <div class="flex items-center gap-3">
-                      <div :class="'w-10 h-10 rounded bg-blue-' + shade + ' ring-1 ring-black/5'"></div>
-                      <code class="text-sm font-mono text-blue-600">bg-blue-{{ shade }}</code>
+                      <div class="w-10 h-10 rounded bg-blue-500 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-blue-500</code>
                     </div>
                   </td>
-                  <td class="py-3 px-4 font-mono text-sm text-text-medium">
-                    {{ shade === 500 ? '#008593' : shade === 600 ? '#00687E' : shade === 700 ? '#004E69' :
-                       shade === 800 ? '#003855' : '#002846' }}
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#008593</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-blue-600 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-blue-600</code>
+                    </div>
                   </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#00687E</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-blue-700 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-blue-700</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#004E69</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-blue-800 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-blue-800</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#003855</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-blue-900 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-blue-900</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#002846</td>
                 </tr>
               </tbody>
             </table>
@@ -315,17 +491,50 @@ const ColorPalette = defineComponent({
                 </tr>
               </thead>
               <tbody class="divide-y divide-border">
-                <tr v-for="shade in [500, 600, 700, 800, 900]" :key="'orange-' + shade">
+                <tr>
                   <td class="py-3 px-4">
                     <div class="flex items-center gap-3">
-                      <div :class="'w-10 h-10 rounded bg-orange-' + shade + ' ring-1 ring-black/5'"></div>
-                      <code class="text-sm font-mono text-blue-600">bg-orange-{{ shade }}</code>
+                      <div class="w-10 h-10 rounded bg-orange-500 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-orange-500</code>
                     </div>
                   </td>
-                  <td class="py-3 px-4 font-mono text-sm text-text-medium">
-                    {{ shade === 500 ? '#F29C1F' : shade === 600 ? '#D67E14' : shade === 700 ? '#B9660E' :
-                       shade === 800 ? '#9A4F0A' : '#833B08' }}
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#F29C1F</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-orange-600 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-orange-600</code>
+                    </div>
                   </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#D67E14</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-orange-700 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-orange-700</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#B9660E</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-orange-800 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-orange-800</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#9A4F0A</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-orange-900 ring-1 ring-black/5"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-orange-900</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">#833B08</td>
                 </tr>
               </tbody>
             </table>
@@ -350,14 +559,113 @@ const ColorPalette = defineComponent({
                 </tr>
               </thead>
               <tbody class="divide-y divide-border">
-                <tr v-for="opacity in [0, 5, 8, 10, 20, 30, 40, 50, 60, 70, 80, 90]" :key="'primary-' + opacity">
+                <tr>
                   <td class="py-3 px-4">
                     <div class="flex items-center gap-3">
-                      <div :class="'w-10 h-10 rounded bg-primary-' + opacity" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
-                      <code class="text-sm font-mono text-blue-600">bg-primary-{{ opacity }}</code>
+                      <div class="w-10 h-10 rounded bg-primary-0" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-0</code>
                     </div>
                   </td>
-                  <td class="py-3 px-4 font-mono text-sm text-text-medium">{{ opacity === 0 ? '1%' : opacity }}%</td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">1%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-primary-5" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-5</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">5%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-primary-8" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-8</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">8%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-primary-10" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-10</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">10%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-primary-20" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-20</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">20%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-primary-30" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-30</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">30%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-primary-40" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-40</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">40%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-primary-50" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-50</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">50%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-primary-60" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-60</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">60%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-primary-70" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-70</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">70%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-primary-80" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-80</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">80%</td>
+                </tr>
+                <tr>
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-primary-90" style="background-image: repeating-linear-gradient(45deg, #f5f5f5 0, #f5f5f5 1px, transparent 0, transparent 50%); background-size: 6px 6px;"></div>
+                      <code class="text-sm font-mono text-blue-600">bg-primary-90</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-text-medium">90%</td>
                 </tr>
               </tbody>
             </table>
@@ -376,14 +684,113 @@ const ColorPalette = defineComponent({
                 </tr>
               </thead>
               <tbody class="divide-y divide-border bg-gray-900">
-                <tr v-for="opacity in [0, 5, 8, 10, 20, 30, 40, 50, 60, 70, 80, 90]" :key="'white-' + opacity" class="border-gray-700">
+                <tr class="border-gray-700">
                   <td class="py-3 px-4">
                     <div class="flex items-center gap-3">
-                      <div :class="'w-10 h-10 rounded bg-white-' + opacity + ' ring-1 ring-white/20'"></div>
-                      <code class="text-sm font-mono text-blue-400">bg-white-{{ opacity }}</code>
+                      <div class="w-10 h-10 rounded bg-white-0 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-0</code>
                     </div>
                   </td>
-                  <td class="py-3 px-4 font-mono text-sm text-gray-400">{{ opacity === 0 ? '1%' : opacity }}%</td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">1%</td>
+                </tr>
+                <tr class="border-gray-700">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-white-5 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-5</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">5%</td>
+                </tr>
+                <tr class="border-gray-700">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-white-8 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-8</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">8%</td>
+                </tr>
+                <tr class="border-gray-700">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-white-10 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-10</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">10%</td>
+                </tr>
+                <tr class="border-gray-700">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-white-20 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-20</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">20%</td>
+                </tr>
+                <tr class="border-gray-700">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-white-30 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-30</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">30%</td>
+                </tr>
+                <tr class="border-gray-700">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-white-40 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-40</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">40%</td>
+                </tr>
+                <tr class="border-gray-700">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-white-50 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-50</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">50%</td>
+                </tr>
+                <tr class="border-gray-700">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-white-60 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-60</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">60%</td>
+                </tr>
+                <tr class="border-gray-700">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-white-70 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-70</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">70%</td>
+                </tr>
+                <tr class="border-gray-700">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-white-80 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-80</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">80%</td>
+                </tr>
+                <tr class="border-gray-700">
+                  <td class="py-3 px-4">
+                    <div class="flex items-center gap-3">
+                      <div class="w-10 h-10 rounded bg-white-90 ring-1 ring-white/20"></div>
+                      <code class="text-sm font-mono text-blue-400">bg-white-90</code>
+                    </div>
+                  </td>
+                  <td class="py-3 px-4 font-mono text-sm text-gray-400">90%</td>
                 </tr>
               </tbody>
             </table>
