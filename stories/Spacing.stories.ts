@@ -221,12 +221,6 @@ const meta = {
   component: Spacing,
   parameters: {
     layout: "fullscreen",
-    docs: {
-      description: {
-        component:
-          "Spacing and border radius tokens for consistent layout and component styling in TDM Design System.",
-      },
-    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Spacing>;
@@ -234,6 +228,4 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const SpacingAndRadius: Story = {
-  render: () => Spacing,
-};
+export const RadiusAndScale: Story = {};

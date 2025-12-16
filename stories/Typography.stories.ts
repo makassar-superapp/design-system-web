@@ -126,12 +126,6 @@ const meta = {
   component: Typography,
   parameters: {
     layout: "fullscreen",
-    docs: {
-      description: {
-        component:
-          "Typography system including font families (Montserrat, Open Sans) and text emphasis levels for TDM Design System.",
-      },
-    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Typography>;
@@ -139,6 +133,4 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const FontFamilies: Story = {
-  render: () => Typography,
-};
+export const FontsAndEmphasis: Story = {};

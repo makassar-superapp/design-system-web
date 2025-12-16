@@ -177,12 +177,6 @@ const meta = {
   component: Shadows,
   parameters: {
     layout: "fullscreen",
-    docs: {
-      description: {
-        component:
-          "Shadow tokens for creating visual depth and hierarchy in the TDM Design System.",
-      },
-    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof Shadows>;
@@ -190,6 +184,4 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const AllShadows: Story = {
-  render: () => Shadows,
-};
+export const AllShadows: Story = {};

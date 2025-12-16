@@ -265,12 +265,6 @@ const meta = {
   component: ColorPalette,
   parameters: {
     layout: "fullscreen",
-    docs: {
-      description: {
-        component:
-          "Complete color palette for TDM Design System including primary, semantic, grayscale, and opacity variants.",
-      },
-    },
   },
   tags: ["autodocs"],
 } satisfies Meta<typeof ColorPalette>;
@@ -278,6 +272,4 @@ const meta = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const AllColors: Story = {
-  render: () => ColorPalette,
-};
+export const AllColors: Story = {};
