@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+import type { Meta, StoryObj } from "@storybook/vue3";
+import { defineComponent } from "vue";
+
+// Raw CSS from app/assets/css/tailwind.css
+const CSS_CONTENT = `@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
 @import "tailwindcss";
 @import "tw-animate-css";
 
@@ -455,3 +459,41 @@
     @apply bg-background text-foreground;
   }
 }
+`;
+
+const CSSCode = defineComponent({
+  name: "CSSCode",
+  setup() {
+    const copyCode = () => {
+      navigator.clipboard.writeText(CSS_CONTENT);
+      alert("CSS copied!");
+    };
+
+    return { cssContent: CSS_CONTENT, copyCode };
+  },
+  template: `
+    <div class="relative">
+      <button 
+        @click="copyCode" 
+        class="absolute top-4 right-4 z-10 px-4 py-2 bg-primary text-white rounded-md hover:bg-primary-80 transition-colors text-sm font-medium shadow-md"
+      >
+        Copy CSS
+      </button>
+      <pre class="m-0 p-6 bg-gray-900 text-gray-100 overflow-auto min-h-screen text-sm leading-relaxed font-mono"><code>{{ cssContent }}</code></pre>
+    </div>
+  `,
+});
+
+const meta = {
+  title: "Design Tokens/CSS Source",
+  component: CSSCode,
+  parameters: {
+    layout: "fullscreen",
+  },
+  tags: ["autodocs"],
+} satisfies Meta<typeof CSSCode>;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+
+export const FullCSS: Story = {};

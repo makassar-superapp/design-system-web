@@ -1,113 +1,166 @@
-# Design System Web
+# TDM Design System Web
 
-## Nuxt Minimal Starter
+A Nuxt Layer-based design system with ready-to-use UI components, built with shadcn-vue and Tailwind CSS 4.
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+📚 **[View Complete Documentation & Component Examples](https://design-system.digitalteam.id/)**
 
-## Setup
+## Installation
 
-Make sure to install dependencies:
-
-```bash
-# npm
-npm install
-
-# pnpm
-pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
-```
-
-## Development Server
-
-Start the development server on `http://localhost:3000`:
+### Via npm
 
 ```bash
 # npm
-npm run dev
+npm install @tdm/design-system-web
 
 # pnpm
-pnpm dev
+pnpm add @tdm/design-system-web
 
 # yarn
-yarn dev
-
-# bun
-bun run dev
+yarn add @tdm/design-system-web
 ```
 
-## Production
-
-Build the application for production:
+### Via GitHub
 
 ```bash
 # npm
-npm run build
+npm install github:makassar-superapp/design-system-web#main
 
 # pnpm
-pnpm build
+pnpm add github:makassar-superapp/design-system-web#main
 
 # yarn
-yarn build
-
-# bun
-bun run build
+yarn add github:makassar-superapp/design-system-web#main
 ```
 
-Locally preview production build:
+### Via Local Path
 
 ```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
+pnpm add file:../design-system-web
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## ⚠️ Important: Required Peer Dependencies
 
-## Storybook
-
-Run Storybook for component development and documentation on `http://localhost:6006`:
+**Make sure the following dependencies are installed** in your consumer project:
 
 ```bash
-# npm
-npm run storybook
+# TypeScript (required)
+pnpm add -D typescript
 
-# pnpm
-pnpm storybook
-
-# yarn
-yarn storybook
-
-# bun
-bun run storybook
+# Lucide Vue Next for icons (required)
+pnpm add lucide-vue-next
 ```
 
-Build Storybook for production:
+> **Note**: `lucide-vue-next` must be installed to avoid "module not found" errors and duplicate dependencies.
+
+## Quick Start
+
+### 1. Extend Layer in Nuxt Config
+
+`nuxt.config.ts`:
+
+```typescript
+export default defineNuxtConfig({
+  extends: ["@tdm/design-system-web"],
+});
+```
+
+### 2. Use Components (Auto-imported)
+
+```vue
+<template>
+  <div>
+    <Button variant="default" @click="handleClick">Click me</Button>
+    <Input v-model="name" placeholder="Enter name" />
+  </div>
+</template>
+
+<script setup lang="ts">
+const name = ref("");
+const handleClick = () => console.log("Clicked!");
+</script>
+```
+
+### 3. Use Utilities
+
+```vue
+<script setup lang="ts">
+import { cn } from "@tdm/design-system-web/lib/utils";
+
+const classes = cn("base-class", condition && "conditional-class");
+</script>
+```
+
+## Available Components
+
+**50+ ready-to-use components**, including:
+
+- **Form**: Button, Input, Select, Checkbox, RadioGroup, Switch, DatePicker, Upload
+- **Layout**: Dialog, Popover, Tabs, Table, Divider
+- **Feedback**: Alert, Badge, Loader, Snackbar, Sonner (Toast)
+- **Advanced**: Calendar, Command, Pagination, Avatar, Chips
+
+📖 **[View all components with examples in Storybook](https://design-system.digitalteam.id/)**
+
+## Design Tokens
+
+Design tokens are automatically available in consumer projects:
+
+```vue
+<template>
+  <div class="bg-primary text-white p-4 rounded-lg">
+    <p class="text-text-high">High emphasis text</p>
+    <p class="text-text-medium">Medium emphasis text</p>
+  </div>
+</template>
+```
+
+**Colors**: `primary`, `success`, `warning`, `info`, `gray-{100-900}`, `text-{high|medium|low}`  
+**Typography**: `font-monteserrat`, `font-opensans`  
+**Shadows**: `shadow-{sm|md|lg|xl|2xl}`
+
+## Troubleshooting
+
+### ❌ "Failed to load TypeScript"
+
+Install TypeScript in your **consumer app**:
 
 ```bash
-# npm
-npm run build-storybook
-
-# pnpm
-pnpm build-storybook
-
-# yarn
-yarn build-storybook
-
-# bun
-bun run build-storybook
+pnpm add -D typescript
+pnpm run dev
 ```
 
-# design-system-web
+### ❌ "Cannot find module 'lucide-vue-next'"
+
+Install lucide-vue-next in your **consumer app**:
+
+```bash
+pnpm add lucide-vue-next
+pnpm run dev
+```
+
+### 🔧 Components Not Auto-Importing
+
+1. Ensure the layer is extended in `nuxt.config.ts`
+2. Run `pnpm run dev`
+3. Restart IDE/dev server
+
+### 🎨 Styles Not Appearing
+
+```bash
+rm -rf .nuxt node_modules/.cache node_modules/.vite
+pnpm run dev
+```
+
+### 🌊 Hydration Errors (DatePicker, Calendar)
+
+Wrap with `<ClientOnly>`:
+
+```vue
+<ClientOnly>
+  <DatePicker v-model="date" />
+</ClientOnly>
+```
+
+## Links
+
+- 📚 [Documentation & Storybook](https://design-system.digitalteam.id/)

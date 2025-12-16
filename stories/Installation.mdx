@@ -1,0 +1,67 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Documentation/Installation" />
+
+# Installation
+
+## Via npm
+
+```bash
+# npm
+npm install @tdm/design-system-web
+
+# pnpm
+pnpm add @tdm/design-system-web
+
+# yarn
+yarn add @tdm/design-system-web
+```
+
+## Via GitHub
+
+```bash
+# npm
+npm install github:makassar-superapp/design-system-web#main
+
+# pnpm
+pnpm add github:makassar-superapp/design-system-web#main
+
+# yarn
+yarn add github:makassar-superapp/design-system-web#main
+```
+
+## Via Local Path
+
+```bash
+pnpm add file:../design-system-web
+```
+
+## ⚠️ Required Peer Dependencies
+
+**IMPORTANT**: Make sure the following dependencies are installed in your consumer project to avoid errors:
+
+### TypeScript (Required)
+
+```bash
+pnpm add -D typescript
+```
+
+### Lucide Vue Next (Required)
+
+```bash
+pnpm add lucide-vue-next
+```
+
+> **Note**: `lucide-vue-next` must be installed to avoid "module not found" errors and duplicate dependencies. The design system uses Lucide icons, so this package must be available in your consumer project.
+
+## Verify Installation
+
+After installation, verify that the package is installed correctly:
+
+```bash
+# Check package.json
+cat package.json | grep "design-system-web"
+
+# or check node_modules
+ls node_modules/@tdm/design-system-web
+```

@@ -1,15 +1,51 @@
 {
-  "name": "tms",
+  "name": "@tdm/design-system-web",
+  "version": "0.1.0",
+  "description": "TDM Design System - Nuxt Layer containing reusable UI components, utilities, and design tokens",
   "type": "module",
-  "private": true,
+  "private": false,
+  "author": "TDM Team",
+  "license": "MIT",
+  "keywords": [
+    "nuxt",
+    "nuxt-layer",
+    "design-system",
+    "ui-components",
+    "vue3",
+    "tailwindcss"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/makassar-superapp/design-system-web.git"
+  },
+  "exports": {
+    ".": {
+      "types": "./nuxt.config.ts",
+      "import": "./nuxt.config.ts"
+    },
+    "./components/*": "./app/components/*",
+    "./utils/*": "./app/utils/*",
+    "./lib/*": "./app/lib/*",
+    "./assets/*": "./app/assets/*"
+  },
+  "main": "./nuxt.config.ts",
+  "types": "./nuxt.config.ts",
   "scripts": {
+    "dev": "nuxi dev",
+    "dev:playground": "nuxi dev .playground",
+    "dev:prepare": "nuxt prepare",
     "build": "nuxt build",
-    "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"
+  },
+  "peerDependencies": {
+    "nuxt": "^4.0.0",
+    "vue": "^3.5.0",
+    "typescript": "^5.0.0",
+    "lucide-vue-next": "^0.546.0"
   },
   "dependencies": {
     "@date-fns/tz": "^1.4.1",
@@ -28,7 +64,6 @@
     "date-fns-tz": "^3.2.0",
     "eslint": "^9.38.0",
     "jwt-decode": "^4.0.0",
-    "lucide-vue-next": "^0.546.0",
     "nuxt": "^4.1.3",
     "reka-ui": "^2.6.0",
     "shadcn-nuxt": "2.3.2",
