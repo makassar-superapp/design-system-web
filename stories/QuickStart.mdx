@@ -4,9 +4,9 @@ import { Meta } from "@storybook/blocks";
 
 # Quick Start
 
-## 1. Extend Layer di Nuxt Config
+## 1. Extend Layer in Nuxt Config
 
-Setelah instalasi, tambahkan design system sebagai layer di `nuxt.config.ts`:
+After installation, add the design system as a layer in `nuxt.config.ts`:
 
 ```typescript
 export default defineNuxtConfig({
@@ -14,9 +14,9 @@ export default defineNuxtConfig({
 });
 ```
 
-### Jika Install dari GitHub atau Local Path
+### If Installing from GitHub or Local Path
 
-Gunakan path yang sesuai:
+Use the appropriate path:
 
 ```typescript
 // Via GitHub
@@ -30,7 +30,7 @@ export default defineNuxtConfig({
 });
 ```
 
-## 2. Gunakan Components (Auto-imported)
+## 2. Use Components (Auto-imported)
 
 ```vue
 <template>
@@ -46,7 +46,7 @@ const handleClick = () => console.log("Clicked!");
 </script>
 ```
 
-### Contoh dengan Form Components
+### Example with Form Components
 
 ```vue
 <template>
@@ -84,13 +84,13 @@ const submitForm = () => {
 </script>
 ```
 
-## 3. Gunakan Utilities
+## 3. Use Utilities
 
-Design system menyediakan utility functions yang berguna:
+The design system provides useful utility functions:
 
 ### cn() - Classname Merger
 
-Utility `cn()` untuk merge classnames dengan conditional logic:
+The `cn()` utility for merging classnames with conditional logic:
 
 ```vue
 <script setup lang="ts">
@@ -105,7 +105,7 @@ const classes = cn(
 </script>
 ```
 
-### Contoh Penggunaan di Component
+### Example Usage in Component
 
 ```vue
 <template>
@@ -136,25 +136,25 @@ const toggle = () => {
 </script>
 ```
 
-## Tips Development
+## Development Tips
 
-### 1. Restart Dev Server Setelah Setup
+### 1. Restart Dev Server After Setup
 
-Setelah menambahkan layer ke `nuxt.config.ts`, restart dev server:
+After adding the layer to `nuxt.config.ts`, restart the dev server:
 
 ```bash
-# Kill dan restart
+# Kill and restart
 pnpm run dev
 ```
 
-### 2. Restart IDE untuk IntelliSense
+### 2. Restart IDE for IntelliSense
 
-Untuk mendapatkan autocomplete dan type hints, restart IDE Anda setelah setup awal.
+To get autocomplete and type hints, restart your IDE after initial setup.
 
 ### 3. Check Component Auto-import
 
-Jika component tidak ter-import otomatis:
+If components are not auto-imported:
 
-1. Pastikan layer di-extend dengan benar di `nuxt.config.ts`
+1. Ensure the layer is properly extended in `nuxt.config.ts`
 2. Clear cache: `rm -rf .nuxt node_modules/.cache`
 3. Restart dev server

@@ -38,7 +38,7 @@ pnpm add file:../design-system-web
 
 ## ⚠️ Required Peer Dependencies
 
-**PENTING**: Pastikan dependencies berikut terinstal di consumer project Anda untuk menghindari errors:
+**IMPORTANT**: Make sure the following dependencies are installed in your consumer project to avoid errors:
 
 ### TypeScript (Required)
 
@@ -52,16 +52,16 @@ pnpm add -D typescript
 pnpm add lucide-vue-next
 ```
 
-> **Note**: `lucide-vue-next` wajib diinstall untuk menghindari error "module not found" dan duplicate dependencies. Design system menggunakan Lucide icons, sehingga package ini harus tersedia di consumer project.
+> **Note**: `lucide-vue-next` must be installed to avoid "module not found" errors and duplicate dependencies. The design system uses Lucide icons, so this package must be available in your consumer project.
 
-## Verifikasi Instalasi
+## Verify Installation
 
-Setelah instalasi, verifikasi bahwa package terinstall dengan benar:
+After installation, verify that the package is installed correctly:
 
 ```bash
 # Check package.json
 cat package.json | grep "design-system-web"
 
-# atau lihat di node_modules
+# or check node_modules
 ls node_modules/@tdm/design-system-web
 ```

@@ -1,8 +1,8 @@
 # TDM Design System Web
 
-Design system berbasis Nuxt Layer dengan komponen UI yang siap pakai, built dengan shadcn-vue dan Tailwind CSS 4.
+A Nuxt Layer-based design system with ready-to-use UI components, built with shadcn-vue and Tailwind CSS 4.
 
-📚 **[Lihat Dokumentasi Lengkap & Contoh Komponen](https://design-system.digitalteam.id/)**
+📚 **[View Complete Documentation & Component Examples](https://design-system.digitalteam.id/)**
 
 ## Installation
 
@@ -40,21 +40,21 @@ pnpm add file:../design-system-web
 
 ## ⚠️ Important: Required Peer Dependencies
 
-**Pastikan dependencies berikut terinstal** di consumer project Anda:
+**Make sure the following dependencies are installed** in your consumer project:
 
 ```bash
 # TypeScript (required)
 pnpm add -D typescript
 
-# Lucide Vue Next untuk icons (required)
+# Lucide Vue Next for icons (required)
 pnpm add lucide-vue-next
 ```
 
-> **Note**: `lucide-vue-next` wajib diinstall untuk menghindari error "module not found" dan duplicate dependencies.
+> **Note**: `lucide-vue-next` must be installed to avoid "module not found" errors and duplicate dependencies.
 
 ## Quick Start
 
-### 1. Extend Layer di Nuxt Config
+### 1. Extend Layer in Nuxt Config
 
 `nuxt.config.ts`:
 
@@ -64,7 +64,7 @@ export default defineNuxtConfig({
 });
 ```
 
-### 2. Gunakan Components (Auto-imported)
+### 2. Use Components (Auto-imported)
 
 ```vue
 <template>
@@ -80,7 +80,7 @@ const handleClick = () => console.log("Clicked!");
 </script>
 ```
 
-### 3. Gunakan Utilities
+### 3. Use Utilities
 
 ```vue
 <script setup lang="ts">
@@ -92,18 +92,18 @@ const classes = cn("base-class", condition && "conditional-class");
 
 ## Available Components
 
-**50+ komponen siap pakai**, termasuk:
+**50+ ready-to-use components**, including:
 
 - **Form**: Button, Input, Select, Checkbox, RadioGroup, Switch, DatePicker, Upload
 - **Layout**: Dialog, Popover, Tabs, Table, Divider
 - **Feedback**: Alert, Badge, Loader, Snackbar, Sonner (Toast)
 - **Advanced**: Calendar, Command, Pagination, Avatar, Chips
 
-📖 **[Lihat semua komponen dengan contoh di Storybook](https://design-system.digitalteam.id/)**
+📖 **[View all components with examples in Storybook](https://design-system.digitalteam.id/)**
 
 ## Design Tokens
 
-Design tokens otomatis tersedia di consumer project:
+Design tokens are automatically available in consumer projects:
 
 ```vue
 <template>
@@ -122,7 +122,7 @@ Design tokens otomatis tersedia di consumer project:
 
 ### ❌ "Failed to load TypeScript"
 
-Install TypeScript di **consumer app**:
+Install TypeScript in your **consumer app**:
 
 ```bash
 pnpm add -D typescript
@@ -131,20 +131,20 @@ pnpm run dev
 
 ### ❌ "Cannot find module 'lucide-vue-next'"
 
-Install lucide-vue-next di **consumer app**:
+Install lucide-vue-next in your **consumer app**:
 
 ```bash
 pnpm add lucide-vue-next
 pnpm run dev
 ```
 
-### 🔧 Components Tidak Auto-Import
+### 🔧 Components Not Auto-Importing
 
-1. Pastikan layer di-extend di `nuxt.config.ts`
-2. Jalankan `pnpm run dev`
+1. Ensure the layer is extended in `nuxt.config.ts`
+2. Run `pnpm run dev`
 3. Restart IDE/dev server
 
-### 🎨 Styles Tidak Muncul
+### 🎨 Styles Not Appearing
 
 ```bash
 rm -rf .nuxt node_modules/.cache node_modules/.vite
@@ -153,7 +153,7 @@ pnpm run dev
 
 ### 🌊 Hydration Errors (DatePicker, Calendar)
 
-Wrap dengan `<ClientOnly>`:
+Wrap with `<ClientOnly>`:
 
 ```vue
 <ClientOnly>
@@ -163,4 +163,4 @@ Wrap dengan `<ClientOnly>`:
 
 ## Links
 
-- 📚 [Dokumentasi & Storybook](https://design-system.digitalteam.id/)
+- 📚 [Documentation & Storybook](https://design-system.digitalteam.id/)

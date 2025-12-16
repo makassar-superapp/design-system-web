@@ -4,43 +4,43 @@ import { Meta } from "@storybook/blocks";
 
 # Design Tokens
 
-Design tokens otomatis tersedia di consumer project Anda setelah extend layer. Tidak perlu konfigurasi tambahan!
+Design tokens are automatically available in your consumer project after extending the layer. No additional configuration needed!
 
 ## Visual Documentation
 
-Lihat dokumentasi visual lengkap untuk melihat semua design tokens secara interaktif:
+See the complete visual documentation to explore all design tokens interactively:
 
-- **[Colors →](/?path=/docs/design-tokens-colors--docs)** - Semua color palette dengan visual swatches
-- **[Typography →](/?path=/docs/design-tokens-typography--docs)** - Font families dan text emphasis levels
-- **[Shadows →](/?path=/docs/design-tokens-shadows--docs)** - Shadow levels dengan preview
-- **[Spacing →](/?path=/docs/design-tokens-spacing--docs)** - Border radius dan spacing scale
-- **[CSS Source →](/?path=/docs/design-tokens-css-source--docs)** - Raw CSS code untuk copy paste
+- **[Colors →](/?path=/docs/design-tokens-colors--docs)** - All color palettes with visual swatches
+- **[Typography →](/?path=/docs/design-tokens-typography--docs)** - Font families and text emphasis levels
+- **[Shadows →](/?path=/docs/design-tokens-shadows--docs)** - Shadow levels with preview
+- **[Spacing →](/?path=/docs/design-tokens-spacing--docs)** - Border radius and spacing scale
+- **[CSS Source →](/?path=/docs/design-tokens-css-source--docs)** - Raw CSS code for copy paste
 
 ---
 
 ## Colors
 
-> 💡 **Tip:** Lihat [Color Palette Story](/?path=/docs/design-tokens-colors--docs) untuk melihat semua warna secara visual dengan swatches interaktif.
+> 💡 **Tip:** See [Color Palette Story](/?path=/docs/design-tokens-colors--docs) to view all colors visually with interactive swatches.
 
 ### Primary Colors
 
-Colors untuk main branding dan primary actions:
+Colors for main branding and primary actions:
 
 - `primary` - Main brand color
-- `primary-foreground` - Text color untuk primary background
+- `primary-foreground` - Text color for primary background
 
 ### Semantic Colors
 
-Colors untuk semantic meanings:
+Colors for semantic meanings:
 
-- `success` - Success states (hijau)
-- `warning` - Warning states (kuning/orange)
-- `info` - Informational states (biru)
-- `destructive` - Error/destructive actions (merah)
+- `success` - Success states (green)
+- `warning` - Warning states (yellow/orange)
+- `info` - Informational states (blue)
+- `destructive` - Error/destructive actions (red)
 
 ### Gray Scale
 
-Neutral colors dengan 9 levels:
+Neutral colors with 9 levels:
 
 - `gray-100` - Lightest gray
 - `gray-200`
@@ -54,7 +54,7 @@ Neutral colors dengan 9 levels:
 
 ### Text Colors
 
-Text colors dengan emphasis levels:
+Text colors with emphasis levels:
 
 - `text-high` - High emphasis text (primary content)
 - `text-medium` - Medium emphasis text (secondary content)
@@ -76,7 +76,7 @@ Text colors dengan emphasis levels:
 - `input` - Input border
 - `ring` - Focus ring
 
-## Contoh Penggunaan Colors
+## Color Usage Example
 
 ```vue
 <template>
@@ -112,9 +112,9 @@ Text colors dengan emphasis levels:
 
 ## Typography
 
-> 💡 **Tip:** Lihat [Typography Story](/?path=/docs/design-tokens-typography--docs) untuk melihat contoh penggunaan font dan text emphasis secara lengkap.
+> 💡 **Tip:** See [Typography Story](/?path=/docs/design-tokens-typography--docs) to view font and text emphasis usage examples.
 
-Font families yang tersedia:
+Available font families:
 
 ### Font Montserrat
 
@@ -130,9 +130,9 @@ Font families yang tersedia:
 
 ## Shadows
 
-> 💡 **Tip:** Lihat [Shadows Story](/?path=/docs/design-tokens-shadows--docs) untuk melihat preview visual semua shadow levels.
+> 💡 **Tip:** See [Shadows Story](/?path=/docs/design-tokens-shadows--docs) to view visual preview of all shadow levels.
 
-Shadow utilities dengan berbagai levels:
+Shadow utilities with various levels:
 
 - `shadow-sm` - Small shadow
 - `shadow` - Default shadow
@@ -141,7 +141,7 @@ Shadow utilities dengan berbagai levels:
 - `shadow-xl` - Extra large shadow
 - `shadow-2xl` - 2XL shadow
 
-### Contoh Penggunaan Shadows
+### Shadow Usage Example
 
 ```vue
 <template>
@@ -159,9 +159,9 @@ Shadow utilities dengan berbagai levels:
 
 ## Spacing
 
-> 💡 **Tip:** Lihat [Spacing Story](/?path=/docs/design-tokens-spacing--docs) untuk melihat spacing scale dan border radius secara visual.
+> 💡 **Tip:** See [Spacing Story](/?path=/docs/design-tokens-spacing--docs) to view spacing scale and border radius visually.
 
-Tailwind CSS spacing scale tersedia (0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96):
+Tailwind CSS spacing scale available (0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 5, 6, 7, 8, 9, 10, 11, 12, 14, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 72, 80, 96):
 
 ```vue
 <!-- Padding -->
@@ -200,7 +200,7 @@ Border radius utilities:
 
 ## Customization
 
-Untuk customize design tokens, override di `tailwind.config.js` atau `app.config.ts` di consumer project Anda:
+To customize design tokens, override them in `tailwind.config.js` or `app.config.ts` in your consumer project:
 
 ```javascript
 // tailwind.config.js
@@ -218,7 +218,7 @@ export default {
 
 ## Best Practices
 
-1. **Gunakan semantic colors** - Gunakan `success`, `warning`, `destructive` daripada hardcode warna
-2. **Konsisten dengan spacing scale** - Gunakan spacing utilities daripada arbitrary values
-3. **Text emphasis** - Gunakan `text-high`, `text-medium`, `text-low` untuk hierarchy
-4. **Shadows untuk depth** - Gunakan shadows untuk memberikan visual depth
+1. **Use semantic colors** - Use `success`, `warning`, `destructive` instead of hardcoded colors
+2. **Stay consistent with spacing scale** - Use spacing utilities instead of arbitrary values
+3. **Text emphasis** - Use `text-high`, `text-medium`, `text-low` for hierarchy
+4. **Shadows for depth** - Use shadows to provide visual depth
