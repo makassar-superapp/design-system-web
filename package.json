@@ -18,6 +18,27 @@
     "type": "git",
     "url": "https://github.com/makassar-superapp/design-system-web.git"
   },
+  "homepage": "https://design-system.digitalteam.id/",
+  "bugs": {
+    "url": "https://github.com/makassar-superapp/design-system-web/issues"
+  },
+  "files": [
+    "app/assets",
+    "app/components/**/*.vue",
+    "app/components/**/*.ts",
+    "!app/components/**/*.stories.ts",
+    "!app/components/**/*.stories.vue",
+    "app/lib",
+    "app/utils",
+    "app/plugins",
+    "nuxt.config.ts",
+    "tsconfig.json",
+    "components.json",
+    "README.md"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "exports": {
     ".": {
       "types": "./nuxt.config.ts",
@@ -39,7 +60,9 @@
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "prepublishOnly": "pnpm run dev:prepare",
+    "pack:test": "npm pack --dry-run"
   },
   "peerDependencies": {
     "nuxt": "^4.0.0",

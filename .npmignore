@@ -4,6 +4,7 @@
 .vscode
 .storybook
 storybook-static
+stories
 node_modules
 .playground
 

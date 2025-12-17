@@ -4,7 +4,11 @@ import { Meta } from "@storybook/blocks";
 
 # Installation
 
-## Via npm
+## 1. Install the Package
+
+Choose one of the following installation methods:
+
+### Via npm (Recommended)
 
 ```bash
 # npm
@@ -17,7 +21,9 @@ pnpm add @tdm/design-system-web
 yarn add @tdm/design-system-web
 ```
 
-## Via GitHub
+### Via GitHub Repository
+
+For the latest version from GitHub:
 
 ```bash
 # npm
@@ -30,38 +36,184 @@ pnpm add github:makassar-superapp/design-system-web#main
 yarn add github:makassar-superapp/design-system-web#main
 ```
 
-## Via Local Path
+> **Note**: View the repository at [github.com/makassar-superapp/design-system-web](https://github.com/makassar-superapp/design-system-web)
+
+### Via Local Path (Development)
+
+For local development:
 
 ```bash
 pnpm add file:../design-system-web
 ```
 
-## ⚠️ Required Peer Dependencies
+## 2. Install Required Dependencies
 
-**IMPORTANT**: Make sure the following dependencies are installed in your consumer project to avoid errors:
-
-### TypeScript (Required)
+> **IMPORTANT**: Install these peer dependencies to avoid errors:
 
 ```bash
+# TypeScript (required for Vue SFC compilation)
 pnpm add -D typescript
-```
 
-### Lucide Vue Next (Required)
-
-```bash
+# Lucide Icons (required by design system components)
 pnpm add lucide-vue-next
 ```
 
-> **Note**: `lucide-vue-next` must be installed to avoid "module not found" errors and duplicate dependencies. The design system uses Lucide icons, so this package must be available in your consumer project.
+## 3. Configure Nuxt Layer
 
-## Verify Installation
+Add the design system layer to your `nuxt.config.ts`:
 
-After installation, verify that the package is installed correctly:
+```typescript
+export default defineNuxtConfig({
+  extends: ["@tdm/design-system-web"],
+});
+```
+
+**Or directly reference the GitHub repository:**
+
+Skip npm installation and point directly to GitHub:
+
+```typescript
+export default defineNuxtConfig({
+  extends: ["github:makassar-superapp/design-system-web#main"],
+});
+```
+
+> **Note**: Using GitHub reference means Nuxt will fetch directly from [github.com/makassar-superapp/design-system-web](https://github.com/makassar-superapp/design-system-web)
+
+**Or use a local path for development:**
+
+```typescript
+export default defineNuxtConfig({
+  extends: ["../design-system-web"],
+});
+```
+
+## 4. Start Using Components
+
+All components are auto-imported—no manual imports needed!
+
+### Basic Example
+
+```vue
+<template>
+  <div>
+    <Button variant="default" @click="handleClick">Click me</Button>
+    <Input v-model="name" placeholder="Enter name" />
+  </div>
+</template>
+
+<script setup lang="ts">
+const name = ref("");
+const handleClick = () => console.log("Clicked!");
+</script>
+```
+
+### Form Example
+
+```vue
+<template>
+  <div class="space-y-4">
+    <div>
+      <Label for="email">Email</Label>
+      <Input
+        id="email"
+        v-model="email"
+        type="email"
+        placeholder="you@example.com"
+      />
+    </div>
+
+    <div>
+      <Label for="message">Message</Label>
+      <Textarea
+        id="message"
+        v-model="message"
+        placeholder="Type your message..."
+      />
+    </div>
+
+    <Button @click="submitForm">Submit</Button>
+  </div>
+</template>
+
+<script setup lang="ts">
+const email = ref("");
+const message = ref("");
+
+const submitForm = () => {
+  console.log({ email: email.value, message: message.value });
+};
+</script>
+```
+
+## 5. Use Utilities
+
+### cn() - Classname Merger
+
+Merge classnames with conditional logic:
+
+```vue
+<script setup lang="ts">
+import { cn } from "@tdm/design-system-web/lib/utils";
+
+const isActive = ref(true);
+const classes = cn(
+  "base-class",
+  isActive.value && "active-class",
+  "another-class"
+);
+</script>
+```
+
+### Dynamic Classes Example
+
+```vue
+<template>
+  <div :class="containerClasses">
+    <Button :class="buttonClasses" @click="toggle">Toggle</Button>
+  </div>
+</template>
+
+<script setup lang="ts">
+import { cn } from "@tdm/design-system-web/lib/utils";
+
+const isExpanded = ref(false);
+
+const containerClasses = computed(() =>
+  cn(
+    "p-4 rounded-lg transition-all",
+    isExpanded.value ? "bg-primary text-white" : "bg-gray-100"
+  )
+);
+
+const buttonClasses = computed(() =>
+  cn("w-full", isExpanded.value && "bg-white text-primary")
+);
+
+const toggle = () => {
+  isExpanded.value = !isExpanded.value;
+};
+</script>
+```
+
+## Troubleshooting
+
+### Components Not Auto-imported
+
+1. Ensure layer is properly extended in `nuxt.config.ts`
+2. Clear cache: `rm -rf .nuxt node_modules/.cache`
+3. Restart dev server: `pnpm run dev`
+
+### Missing IntelliSense
+
+Restart your IDE after initial setup to enable autocomplete and type hints.
+
+### Verify Installation
 
 ```bash
 # Check package.json
 cat package.json | grep "design-system-web"
 
-# or check node_modules
+# Check node_modules
 ls node_modules/@tdm/design-system-web
 ```
