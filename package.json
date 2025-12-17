@@ -1,5 +1,5 @@
 {
-  "name": "@tdm/design-system-web",
+  "name": "@tdm-digitalteam/design-system-web",
   "version": "1.0.0",
   "description": "TDM Design System - Nuxt Layer containing reusable UI components, utilities, and design tokens",
   "type": "module",

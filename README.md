@@ -10,13 +10,13 @@ A Nuxt Layer-based design system with ready-to-use UI components, built with sha
 
 ```bash
 # npm
-npm install @tdm/design-system-web
+npm install @tdm-digitalteam/design-system-web
 
 # pnpm
-pnpm add @tdm/design-system-web
+pnpm add @tdm-digitalteam/design-system-web
 
 # yarn
-yarn add @tdm/design-system-web
+yarn add @tdm-digitalteam/design-system-web
 ```
 
 ### Via GitHub
@@ -60,7 +60,7 @@ pnpm add lucide-vue-next
 
 ```typescript
 export default defineNuxtConfig({
-  extends: ["@tdm/design-system-web"],
+  extends: ["@tdm-digitalteam/design-system-web"],
 });
 ```
 
@@ -84,7 +84,7 @@ const handleClick = () => console.log("Clicked!");
 
 ```vue
 <script setup lang="ts">
-import { cn } from "@tdm/design-system-web/lib/utils";
+import { cn } from "@tdm-digitalteam/design-system-web/lib/utils";
 
 const classes = cn("base-class", condition && "conditional-class");
 </script>
