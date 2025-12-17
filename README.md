@@ -1,6 +1,6 @@
 # TDM Design System Web
 
-A Nuxt Layer-based design system with ready-to-use UI components, built with shadcn-vue and Tailwind CSS 4.
+A Nuxt Layer-based design system with ready-to-use UI components, built on **[Nuxt 4](https://nuxt.com)**, **[Tailwind CSS 4](https://tailwindcss.com)**, and **[shadcn-vue](https://www.shadcn-vue.com)**.
 
 📚 **[View Complete Documentation & Component Examples](https://design-system.digitalteam.id/)**
 
@@ -38,19 +38,19 @@ yarn add github:makassar-superapp/design-system-web#main
 pnpm add file:../design-system-web
 ```
 
-## ⚠️ Important: Required Peer Dependencies
+## 💡 Recommended Dependencies
 
-**Make sure the following dependencies are installed** in your consumer project:
+For the best experience, install these dependencies in your consumer project:
 
 ```bash
-# TypeScript (required)
+# TypeScript (recommended for better type safety and IDE support)
 pnpm add -D typescript
 
-# Lucide Vue Next for icons (required)
+# Lucide Vue Next (needed if using components with built-in icons)
 pnpm add lucide-vue-next
 ```
 
-> **Note**: `lucide-vue-next` must be installed to avoid "module not found" errors and duplicate dependencies.
+> **Note**: `lucide-vue-next` is used by some components for icons. You can use alternative icon libraries if preferred.
 
 ## Quick Start
 
