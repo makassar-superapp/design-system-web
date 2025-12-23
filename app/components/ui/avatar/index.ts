@@ -2,6 +2,9 @@ import type { VariantProps } from "class-variance-authority";
 import { cva } from "class-variance-authority";
 
 export { default as Avatar } from "./Avatar.vue";
+export { default as AvatarRoot } from "./AvatarRoot.vue";
+export { default as AvatarFallback } from "./AvatarFallback.vue";
+export { default as AvatarImage } from "./AvatarImage.vue";
 export { default as OnlineIndicator } from "./OnlineIndicator.vue";
 export { default as VerifiedIndicator } from "./VerifiedIndicator.vue";
 

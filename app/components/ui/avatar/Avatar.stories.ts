@@ -379,3 +379,425 @@ export const Online: Story = {
     `,
   }),
 };
+
+export const OnlineAway: Story = {
+  parameters: {
+    docs: {
+      source: {
+        code: `<Avatar
+  size="xs"
+  src="https://picsum.photos/id/64/24/24"
+  alt="A1"
+  :online="false"
+  :online-size="6"
+/>
+<Avatar
+  size="sm"
+  src="https://picsum.photos/id/1025/32/32"
+  alt="A2"
+  :online="false"
+  :online-size="8"
+/>
+<Avatar
+  size="md"
+  src="https://picsum.photos/id/1027/40/40"
+  alt="A3"
+  :online="false"
+  :online-size="10"
+/>
+<Avatar
+  size="lg"
+  src="https://picsum.photos/id/103/48/48"
+  alt="A4"
+  :online="false"
+  :online-size="12"
+/>
+<Avatar
+  size="xl"
+  src="https://picsum.photos/id/104/56/56"
+  alt="A5"
+  :online="false"
+  :online-size="14"
+/>
+<Avatar
+  size="2xl"
+  src="https://picsum.photos/id/105/64/64"
+  alt="A6"
+  :online="false"
+  :online-size="16"
+/>`,
+      },
+    },
+  },
+  render: () => ({
+    components: { Avatar },
+    template: `
+      <div class="flex items-center gap-4">
+        <Avatar
+          size="xs"
+          src="https://picsum.photos/id/64/24/24"
+          alt="A1"
+          :online="false"
+          :online-size="6"
+        />
+        <Avatar
+          size="sm"
+          src="https://picsum.photos/id/1025/32/32"
+          alt="A2"
+          :online="false"
+          :online-size="8"
+        />
+        <Avatar
+          size="md"
+          src="https://picsum.photos/id/1027/40/40"
+          alt="A3"
+          :online="false"
+          :online-size="10"
+        />
+        <Avatar
+          size="lg"
+          src="https://picsum.photos/id/103/48/48"
+          alt="A4"
+          :online="false"
+          :online-size="12"
+        />
+        <Avatar
+          size="xl"
+          src="https://picsum.photos/id/104/56/56"
+          alt="A5"
+          :online="false"
+          :online-size="14"
+        />
+        <Avatar
+          size="2xl"
+          src="https://picsum.photos/id/105/64/64"
+          alt="A6"
+          :online="false"
+          :online-size="16"
+        />
+      </div>
+    `,
+  }),
+};
+
+export const VerifiedOnline: Story = {
+  parameters: {
+    docs: {
+      source: {
+        code: `<Avatar
+  size="md"
+  src="https://picsum.photos/id/1027/40/40"
+  alt="User 1"
+  verified
+  :verified-size="16"
+  :online="true"
+  :online-size="10"
+/>
+<Avatar
+  size="md"
+  src="https://picsum.photos/id/1025/40/40"
+  alt="User 2"
+  verified
+  :verified-size="16"
+  :online="false"
+  :online-size="10"
+/>
+<Avatar
+  size="lg"
+  src="https://picsum.photos/id/103/48/48"
+  alt="User 3"
+  verified
+  :verified-size="18"
+  :online="true"
+  :online-size="12"
+/>
+<Avatar
+  size="xl"
+  src="https://picsum.photos/id/104/56/56"
+  alt="User 4"
+  verified
+  :verified-size="20"
+  :online="true"
+  :online-size="14"
+/>`,
+      },
+    },
+  },
+  render: () => ({
+    components: { Avatar },
+    template: `
+      <div class="flex items-center gap-4">
+        <Avatar
+          size="md"
+          src="https://picsum.photos/id/1027/40/40"
+          alt="User 1"
+          verified
+          :verified-size="16"
+          :online="true"
+          :online-size="10"
+        />
+        <Avatar
+          size="md"
+          src="https://picsum.photos/id/1025/40/40"
+          alt="User 2"
+          verified
+          :verified-size="16"
+          :online="false"
+          :online-size="10"
+        />
+        <Avatar
+          size="lg"
+          src="https://picsum.photos/id/103/48/48"
+          alt="User 3"
+          verified
+          :verified-size="18"
+          :online="true"
+          :online-size="12"
+        />
+        <Avatar
+          size="xl"
+          src="https://picsum.photos/id/104/56/56"
+          alt="User 4"
+          verified
+          :verified-size="20"
+          :online="true"
+          :online-size="14"
+        />
+      </div>
+    `,
+  }),
+};
+
+export const InitialsVerified: Story = {
+  parameters: {
+    docs: {
+      source: {
+        code: `<Avatar
+  size="md"
+  initial="JD"
+  verified
+  :verified-size="16"
+/>
+<Avatar
+  size="md"
+  initial="AB"
+  verified
+  :verified-size="16"
+  :online="true"
+  :online-size="10"
+/>
+<Avatar
+  size="lg"
+  initial="CD"
+  verified
+  :verified-size="18"
+  :online="false"
+  :online-size="12"
+/>`,
+      },
+    },
+  },
+  render: () => ({
+    components: { Avatar },
+    template: `
+      <div class="flex items-center gap-4">
+        <Avatar
+          size="md"
+          initial="JD"
+          verified
+          :verified-size="16"
+        />
+        <Avatar
+          size="md"
+          initial="AB"
+          verified
+          :verified-size="16"
+          :online="true"
+          :online-size="10"
+        />
+        <Avatar
+          size="lg"
+          initial="CD"
+          verified
+          :verified-size="18"
+          :online="false"
+          :online-size="12"
+        />
+      </div>
+    `,
+  }),
+};
+
+export const AvatarGroup: Story = {
+  parameters: {
+    docs: {
+      source: {
+        code: `<div class="flex -space-x-4">
+  <Avatar size="md" src="https://picsum.photos/id/1027/40/40" alt="User 1" class="ring-2 ring-background" />
+  <Avatar size="md" src="https://picsum.photos/id/1025/40/40" alt="User 2" class="ring-2 ring-background" />
+  <Avatar size="md" src="https://picsum.photos/id/103/40/40" alt="User 3" class="ring-2 ring-background" />
+  <Avatar size="md" src="https://picsum.photos/id/104/40/40" alt="User 4" class="ring-2 ring-background" />
+  <Avatar size="md" initial="+5" class="ring-2 ring-background bg-muted" />
+</div>`,
+      },
+    },
+  },
+  render: () => ({
+    components: { Avatar },
+    template: `
+      <div class="flex -space-x-4">
+        <Avatar size="md" src="https://picsum.photos/id/1027/40/40" alt="User 1" class="ring-2 ring-background" />
+        <Avatar size="md" src="https://picsum.photos/id/1025/40/40" alt="User 2" class="ring-2 ring-background" />
+        <Avatar size="md" src="https://picsum.photos/id/103/40/40" alt="User 3" class="ring-2 ring-background" />
+        <Avatar size="md" src="https://picsum.photos/id/104/40/40" alt="User 4" class="ring-2 ring-background" />
+        <Avatar size="md" initial="+5" class="ring-2 ring-background bg-muted" />
+      </div>
+    `,
+  }),
+};
+
+export const WithText: Story = {
+  parameters: {
+    docs: {
+      source: {
+        code: `<div class="flex items-center gap-3">
+  <Avatar
+    size="md"
+    src="https://picsum.photos/id/1027/40/40"
+    alt="John Doe"
+    verified
+    :verified-size="16"
+    :online="true"
+    :online-size="10"
+  />
+  <div>
+    <p class="text-sm font-medium">John Doe</p>
+    <p class="text-xs text-muted-foreground">@johndoe</p>
+  </div>
+</div>
+
+<div class="flex items-center gap-3">
+  <Avatar
+    size="lg"
+    initial="AB"
+    :online="false"
+    :online-size="12"
+  />
+  <div>
+    <p class="text-base font-medium">Alice Brown</p>
+    <p class="text-sm text-muted-foreground">Away</p>
+  </div>
+</div>`,
+      },
+    },
+  },
+  render: () => ({
+    components: { Avatar },
+    template: `
+      <div class="space-y-4">
+        <div class="flex items-center gap-3">
+          <Avatar
+            size="md"
+            src="https://picsum.photos/id/1027/40/40"
+            alt="John Doe"
+            verified
+            :verified-size="16"
+            :online="true"
+            :online-size="10"
+          />
+          <div>
+            <p class="text-sm font-medium">John Doe</p>
+            <p class="text-xs text-muted-foreground">@johndoe</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+          <Avatar
+            size="lg"
+            initial="AB"
+            :online="false"
+            :online-size="12"
+          />
+          <div>
+            <p class="text-base font-medium">Alice Brown</p>
+            <p class="text-sm text-muted-foreground">Away</p>
+          </div>
+        </div>
+      </div>
+    `,
+  }),
+};
+
+export const FallbackStates: Story = {
+  parameters: {
+    docs: {
+      source: {
+        code: `<!-- With Image -->
+<Avatar size="md" src="https://picsum.photos/id/1027/40/40" alt="User" />
+
+<!-- With Initial -->
+<Avatar size="md" initial="AB" />
+
+<!-- Default Fallback (User Icon) -->
+<Avatar size="md" />
+
+<!-- With Online Status -->
+<Avatar size="md" :online="true" :online-size="10" />
+
+<!-- With Verified Badge -->
+<Avatar size="md" verified :verified-size="16" />
+
+<!-- All Combined -->
+<Avatar
+  size="md"
+  verified
+  :verified-size="16"
+  :online="true"
+  :online-size="10"
+/>`,
+      },
+    },
+  },
+  render: () => ({
+    components: { Avatar },
+    template: `
+      <div class="flex items-center gap-4 flex-wrap">
+        <div class="flex flex-col items-center gap-2">
+          <Avatar size="md" src="https://picsum.photos/id/1027/40/40" alt="User" />
+          <span class="text-xs text-muted-foreground">With Image</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <Avatar size="md" initial="AB" />
+          <span class="text-xs text-muted-foreground">With Initial</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <Avatar size="md" />
+          <span class="text-xs text-muted-foreground">Default</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <Avatar size="md" :online="true" :online-size="10" />
+          <span class="text-xs text-muted-foreground">Online</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <Avatar size="md" verified :verified-size="16" />
+          <span class="text-xs text-muted-foreground">Verified</span>
+        </div>
+
+        <div class="flex flex-col items-center gap-2">
+          <Avatar
+            size="md"
+            verified
+            :verified-size="16"
+            :online="true"
+            :online-size="10"
+          />
+          <span class="text-xs text-muted-foreground">All</span>
+        </div>
+      </div>
+    `,
+  }),
+};
