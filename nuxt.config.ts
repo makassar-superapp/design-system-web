@@ -60,7 +60,7 @@ export default defineNuxtConfig({
   // Alias configuration for consuming projects
   alias: {
     "@": join(currentDir, "./app"),
-    "@tdm/design-system": currentDir,
+    "@tdm-digitalteam/design-system": currentDir,
   },
 
   routeRules: {

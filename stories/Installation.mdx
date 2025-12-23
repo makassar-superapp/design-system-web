@@ -4,6 +4,16 @@ import { Meta } from "@storybook/blocks";
 
 # Installation
 
+## Built With
+
+This design system is built on:
+
+- **[Nuxt 4](https://nuxt.com)** - The Intuitive Vue Framework
+- **[Tailwind CSS 4](https://tailwindcss.com)** - A utility-first CSS framework
+- **[shadcn-vue](https://www.shadcn-vue.com)** - Beautifully designed components
+
+---
+
 ## 1. Install the Package
 
 Choose one of the following installation methods:
@@ -12,13 +22,13 @@ Choose one of the following installation methods:
 
 ```bash
 # npm
-npm install @tdm/design-system-web
+npm install @tdm-digitalteam/design-system-web
 
 # pnpm
-pnpm add @tdm/design-system-web
+pnpm add @tdm-digitalteam/design-system-web
 
 # yarn
-yarn add @tdm/design-system-web
+yarn add @tdm-digitalteam/design-system-web
 ```
 
 ### Via GitHub Repository
@@ -46,17 +56,19 @@ For local development:
 pnpm add file:../design-system-web
 ```
 
-## 2. Install Required Dependencies
+## 2. Install Recommended Dependencies
 
-> **IMPORTANT**: Install these peer dependencies to avoid errors:
+For the best experience, install these dependencies:
 
 ```bash
-# TypeScript (required for Vue SFC compilation)
+# TypeScript (recommended for better type safety and IDE support)
 pnpm add -D typescript
 
-# Lucide Icons (required by design system components)
+# Lucide Icons (needed if using components with built-in icons)
 pnpm add lucide-vue-next
 ```
+
+> **Note**: `lucide-vue-next` is used by some components for icons. You can use alternative icon libraries if preferred.
 
 ## 3. Configure Nuxt Layer
 
@@ -64,7 +76,7 @@ Add the design system layer to your `nuxt.config.ts`:
 
 ```typescript
 export default defineNuxtConfig({
-  extends: ["@tdm/design-system-web"],
+  extends: ["@tdm-digitalteam/design-system-web"],
 });
 ```
 
@@ -154,7 +166,7 @@ Merge classnames with conditional logic:
 
 ```vue
 <script setup lang="ts">
-import { cn } from "@tdm/design-system-web/lib/utils";
+import { cn } from "@tdm-digitalteam/design-system-web/lib/utils";
 
 const isActive = ref(true);
 const classes = cn(
@@ -175,7 +187,7 @@ const classes = cn(
 </template>
 
 <script setup lang="ts">
-import { cn } from "@tdm/design-system-web/lib/utils";
+import { cn } from "@tdm-digitalteam/design-system-web/lib/utils";
 
 const isExpanded = ref(false);
 
@@ -215,5 +227,5 @@ Restart your IDE after initial setup to enable autocomplete and type hints.
 cat package.json | grep "design-system-web"
 
 # Check node_modules
-ls node_modules/@tdm/design-system-web
+ls node_modules/@tdm-digitalteam/design-system-web
 ```
