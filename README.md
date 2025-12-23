@@ -161,6 +161,22 @@ Wrap with `<ClientOnly>`:
 </ClientOnly>
 ```
 
+## Contributing
+
+We welcome contributions! 🎉
+
+- **For Contributors**: Read our [Contributing Guide](./CONTRIBUTING.md) to learn how to:
+
+  - Report bugs and suggest features
+  - Submit pull requests
+  - Follow our development guidelines
+  - Set up your local environment
+
+- **For Maintainers**: See [Publishing Guide](./PUBLISHING.md) for NPM publishing workflow
+
 ## Links
 
 - 📚 [Documentation & Storybook](https://design-system.digitalteam.id/)
+- 🐛 [Report Issues](https://github.com/makassar-superapp/design-system-web/issues)
+- 🤝 [Contributing Guide](./CONTRIBUTING.md)
+- 📦 [NPM Package](https://www.npmjs.com/package/@tdm-digitalteam/design-system-web)
